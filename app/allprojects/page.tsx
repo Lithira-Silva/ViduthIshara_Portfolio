@@ -5,7 +5,7 @@ import { ArrowUpRight, ArrowLeft, Plus, Minus } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/data/projects";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 const containerVariants = {
@@ -29,7 +29,7 @@ const itemVariants = {
   },
 };
 
-export default function AllProjectsPage() {
+function AllProjectsContent() {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const searchParams = useSearchParams();
   const fromSection = searchParams.get('from') || 'hero';
@@ -209,5 +209,13 @@ export default function AllProjectsPage() {
         </motion.div>
       </div>
     </main>
+  );
+}
+
+export default function AllProjectsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <AllProjectsContent />
+    </Suspense>
   );
 }
