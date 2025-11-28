@@ -122,7 +122,7 @@ export default function Navbar() {
 
               {/* GitHub */}
               <motion.a
-                href="https://github.com/Lithira-Silva"
+                href="https://github.com/RMVISHARA"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
@@ -216,7 +216,7 @@ export default function Navbar() {
 
                 {/* GitHub */}
                 <motion.a
-                  href="https://github.com/Lithira-Silva"
+                  href="https://github.com/RMVISHARA"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileTap={{ scale: 0.95 }}
