@@ -51,7 +51,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 sm:px-8 lg:px-12 py-20 md:py-24">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 sm:px-8 lg:px-12 py-20 md:py-24 pt-28 md:pt-32">
       {/* Clean Background */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div 
