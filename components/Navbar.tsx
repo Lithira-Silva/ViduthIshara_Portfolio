@@ -57,13 +57,13 @@ export default function Navbar() {
       `}
     >
       <nav className="max-w-7xl mx-auto px-6 sm:px-8 py-5">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-end gap-4">
           {/* Logo */}
           <motion.a
             href="#home"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="relative group"
+            className="relative group mr-auto"
           >
             <span className="font-heading font-bold text-2xl bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
               PORTFOLIO
