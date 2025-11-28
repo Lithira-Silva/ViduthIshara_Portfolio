@@ -36,8 +36,24 @@ export default function Hero() {
       {/* Premium Background System */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Radial Gradients with Enhanced Glow */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gold/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-red-primary/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 bg-gold/10 rounded-full blur-3xl"
+          style={{
+            animation: 'pulse-slow 8s ease-in-out infinite'
+          }}
+        />
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 0.3 }}
+          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] translate-x-1/2 translate-y-1/2 bg-red-primary/10 rounded-full blur-3xl"
+          style={{
+            animation: 'pulse-slow 8s ease-in-out infinite 2s'
+          }}
+        />
         
         {/* Mesh Gradient Overlays */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent opacity-40" />
@@ -109,8 +125,8 @@ export default function Hero() {
                   <div className="h-[2px] w-10 bg-gradient-gold rounded-full shadow-gold-glow" />
                   <div className="h-[2px] w-5 bg-gradient-red rounded-full shadow-red-glow" />
                 </div>
-                <h2 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-heading font-semibold text-foreground/90 tracking-tight leading-tight">
-                  Data Scientist <span className="text-gold">•</span> AI Engineer <span className="text-gold">•</span> Computer Vision Specialist
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-heading font-bold text-foreground tracking-tight leading-tight">
+                  Data Scientist <span className="text-gold mx-1">•</span> AI Engineer <span className="text-gold mx-1">•</span> Computer Vision Specialist
                 </h2>
               </motion.div>
             </div>
@@ -123,10 +139,10 @@ export default function Hero() {
               className="relative pl-4 border-l-2 border-gold/40"
             >
               <div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-gold via-gold/50 to-transparent" />
-              <p className="text-sm sm:text-base md:text-lg font-body text-foreground/75 leading-relaxed font-light max-w-2xl">
-                I build applied AI systems — <span className="text-gold font-semibold">computer vision</span>, 
-                <span className="text-gold font-semibold"> deep learning</span> and 
-                <span className="text-gold font-semibold"> intelligent automation</span>.
+              <p className="text-base sm:text-lg md:text-xl font-body text-foreground/90 leading-relaxed font-normal max-w-2xl">
+                I build applied AI systems — <span className="text-gold font-bold">computer vision</span>, 
+                <span className="text-gold font-bold"> deep learning</span> and 
+                <span className="text-gold font-bold"> intelligent automation</span>.
               </p>
             </motion.div>
 
@@ -203,11 +219,14 @@ export default function Hero() {
                 className="group relative w-full sm:w-auto"
               >
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-gold via-gold-light to-gold rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
-                <div className="relative px-7 py-3 bg-background/80 border-2 border-gold text-gold font-heading font-bold rounded-xl backdrop-blur-sm hover:bg-gold/5 transition-all duration-300 shadow-xl">
-                  <span className="flex items-center justify-center gap-2 text-sm">
+                <div className="relative px-7 py-3 bg-background/80 border-2 border-gold text-gold font-heading font-bold rounded-xl backdrop-blur-sm overflow-hidden transition-all duration-300 shadow-xl">
+                  <span className="relative z-10 flex items-center justify-center gap-2 text-sm">
                     Download CV
                     <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
                   </span>
+                  <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-gold/25 to-transparent skew-x-12" />
                 </div>
               </motion.button>
             </motion.div>
@@ -238,7 +257,7 @@ export default function Hero() {
                   {/* Enhanced Orbital Nodes - 12 Points */}
                   {[...Array(12)].map((_, i) => {
                     const angle = (i * 30) * (Math.PI / 180);
-                    const radius = 230;
+                    const radius = 180;
                     return (
                       <motion.div
                         key={i}
@@ -259,7 +278,7 @@ export default function Hero() {
                           ease: "easeInOut"
                         }}
                       >
-                        <div className="w-3.5 h-3.5 bg-gold rounded-full shadow-[0_0_20px_rgba(212,175,55,0.8)]" />
+                        <div className="w-3 h-3 bg-gold rounded-full shadow-[0_0_20px_rgba(212,175,55,0.8)]" />
                       </motion.div>
                     );
                   })}
@@ -269,10 +288,10 @@ export default function Hero() {
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-36"
+                  className="absolute inset-32"
                 >
                   {[...Array(6)].map((_, i) => {
-                    const radius = 90;
+                    const radius = 70;
                     return (
                       <motion.div
                         key={i}
@@ -291,7 +310,7 @@ export default function Hero() {
                           delay: i * 0.3,
                         }}
                       >
-                        <div className="w-2.5 h-2.5 bg-red-primary rounded-full shadow-[0_0_15px_rgba(198,40,40,0.8)]" />
+                        <div className="w-2 h-2 bg-red-primary rounded-full shadow-[0_0_15px_rgba(198,40,40,0.8)]" />
                       </motion.div>
                     );
                   })}
@@ -300,15 +319,15 @@ export default function Hero() {
                 {/* Enhanced Pulsing Center Glow */}
                 <motion.div
                   animate={{
-                    scale: [1, 1.4, 1],
-                    opacity: [0.2, 0.5, 0.2],
+                    scale: [1, 1.3, 1],
+                    opacity: [0.2, 0.4, 0.2],
                   }}
                   transition={{
                     duration: 4,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  className="absolute w-56 h-56 bg-gold rounded-full blur-3xl"
+                  className="absolute w-40 h-40 bg-gold rounded-full blur-3xl"
                 />
 
                 {/* Premium Center Core */}
