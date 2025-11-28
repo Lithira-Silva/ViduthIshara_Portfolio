@@ -51,36 +51,22 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 sm:px-8 lg:px-12 py-12 md:py-16">
-      {/* Premium Background System */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 sm:px-8 lg:px-12 py-20 md:py-24">
+      {/* Clean Background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Radial Gradients with Enhanced Glow */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute top-1/4 left-1/4 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 bg-gold/8 rounded-full blur-[100px]"
-          style={{
-            animation: 'pulse-slow 8s ease-in-out infinite'
-          }}
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 bg-gold/5 rounded-full blur-[120px]"
         />
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 0.3 }}
-          className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] translate-x-1/2 translate-y-1/2 bg-red-primary/8 rounded-full blur-[100px]"
-          style={{
-            animation: 'pulse-slow 8s ease-in-out infinite 2s'
-          }}
+          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] translate-x-1/2 translate-y-1/2 bg-red-primary/5 rounded-full blur-[120px]"
         />
-        
-        {/* Subtle Gradient Mesh */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/3 via-transparent to-transparent opacity-50" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-red-primary/3 via-transparent to-transparent opacity-50" />
       </div>
-
-      {/* Minimal Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)] opacity-30" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-center">
@@ -91,46 +77,42 @@ export default function Hero() {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-6 md:space-y-7"
           >
-            {/* Name - Ultra-Premium Typography */}
-            <div className="space-y-6">
+            {/* Name - Premium Typography */}
+            <div className="space-y-5">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-heading font-black tracking-tighter leading-[0.95]">
-                  <span className="bg-gradient-to-br from-foreground via-foreground/95 to-foreground/85 bg-clip-text text-transparent" style={{
-                    textShadow: '0 0 40px rgba(245,245,247,0.1)'
-                  }}>
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-heading font-black tracking-tighter leading-[0.9]">
+                  <span className="text-foreground">
                     VIDUTH{" "}
                   </span>
-                  <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent" style={{
-                    textShadow: '0 0 60px rgba(212,175,55,0.2)'
-                  }}>
+                  <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
                     ISHARA
                   </span>
                 </h1>
               </motion.div>
               
-              {/* Title with Premium Styling */}
+              {/* Animated Job Title */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               >
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-heading font-semibold text-foreground/70 tracking-tight leading-tight">
-                  <div className="inline-block overflow-hidden relative min-w-[320px] sm:min-w-[420px] md:min-w-[550px] h-[1.4em]">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-heading font-bold text-foreground/80 tracking-tight leading-tight">
+                  <div className="inline-block overflow-hidden relative min-w-[280px] sm:min-w-[360px] md:min-w-[450px] h-[1.3em]">
                     <AnimatePresence mode="wait">
                       <motion.span
                         key={currentTitleIndex}
-                        initial={{ y: 60, opacity: 0 }}
+                        initial={{ y: 50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -60, opacity: 0 }}
+                        exit={{ y: -50, opacity: 0 }}
                         transition={{ 
-                          duration: 0.7,
+                          duration: 0.6,
                           ease: [0.22, 1, 0.36, 1]
                         }}
-                        className="absolute left-0 top-0 whitespace-nowrap bg-gradient-to-r from-foreground/90 via-foreground/80 to-foreground/70 bg-clip-text text-transparent"
+                        className="absolute left-0 top-0 whitespace-nowrap text-foreground/90"
                       >
                         {jobTitles[currentTitleIndex]}
                       </motion.span>
@@ -140,25 +122,24 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* Subtitle - Enhanced Readability */}
+            {/* Subtitle */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.9 }}
-              className="relative pl-5 border-l border-gold/30"
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="relative pl-6 border-l-2 border-gold/40"
             >
-              <div className="absolute left-0 top-0 w-[2px] h-full bg-gradient-to-b from-gold/60 via-gold/30 to-transparent" />
-              <p className="text-sm sm:text-base md:text-lg font-body text-foreground/75 leading-relaxed font-light max-w-2xl">
-                Architecting intelligent systems that see, learn, and automate — transforming raw data into <span className="text-gold/90 font-medium">production-ready AI solutions</span> through <span className="text-gold/90 font-medium">computer vision</span>, <span className="text-gold/90 font-medium">deep learning</span>, and <span className="text-gold/90 font-medium">advanced automation</span>.
+              <p className="text-base sm:text-lg md:text-xl font-body text-foreground/80 leading-relaxed max-w-2xl">
+                Architecting intelligent systems through <span className="text-gold font-semibold">computer vision</span>, <span className="text-gold font-semibold">deep learning</span>, and <span className="text-gold font-semibold">production-ready AI solutions</span>.
               </p>
             </motion.div>
 
-            {/* Premium Stats Grid */}
+            {/* Stats Grid */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.9 }}
-              className="grid sm:grid-cols-2 gap-3"
+              transition={{ delay: 0.7, duration: 0.8 }}
+              className="grid sm:grid-cols-2 gap-4 pt-2"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -169,22 +150,19 @@ export default function Hero() {
                   whileHover={{ y: -6, scale: 1.02 }}
                   className="group relative"
                 >
-                  {/* Subtle Glow Effect */}
-                  <div className={`absolute -inset-1 bg-gradient-to-r ${stat.color === 'gold' ? 'from-gold/10 to-gold/5' : 'from-red-primary/10 to-red-primary/5'} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700`} />
-                  
-                  <div className="relative p-3.5 sm:p-4 rounded-2xl bg-gradient-to-br from-white/[0.05] via-white/[0.02] to-transparent border border-white/[0.08] group-hover:border-white/[0.15] transition-all duration-500 backdrop-blur-md shadow-xl">
+                  <div className="relative p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-white/[0.06] via-white/[0.03] to-transparent border border-white/10 group-hover:border-gold/40 transition-all duration-500 backdrop-blur-md shadow-lg">
                     <div className="flex items-start gap-2.5">
                       {/* Icon Container */}
-                      <div className={`shrink-0 p-2 rounded-xl ${stat.color === 'gold' ? 'bg-gold/8 border-gold/20' : 'bg-red-primary/8 border-red-primary/20'} border group-hover:scale-110 transition-all duration-500`}>
-                        <stat.icon className={`w-4 h-4 ${stat.color === 'gold' ? 'text-gold/80' : 'text-red-primary/80'}`} />
+                      <div className={`shrink-0 p-2.5 rounded-xl ${stat.color === 'gold' ? 'bg-gold/10 border-gold/25' : 'bg-red-primary/10 border-red-primary/25'} border group-hover:scale-105 transition-all duration-300`}>
+                        <stat.icon className={`w-5 h-5 ${stat.color === 'gold' ? 'text-gold' : 'text-red-primary'}`} strokeWidth={2.5} />
                       </div>
                       
                       {/* Text Content */}
-                      <div className="flex-1 space-y-1">
-                        <div className={`text-xs font-heading font-semibold ${stat.color === 'gold' ? 'text-gold/60' : 'text-red-primary/60'} uppercase tracking-wide`}>
+                      <div className="flex-1 space-y-1.5">
+                        <div className={`text-xs font-heading font-bold ${stat.color === 'gold' ? 'text-gold/70' : 'text-red-primary/70'} uppercase tracking-wider`}>
                           {stat.label}
                         </div>
-                        <p className="text-xs font-body text-foreground/70 leading-snug">
+                        <p className="text-sm font-body text-foreground/75 leading-relaxed">
                           {stat.text}
                         </p>
                       </div>
@@ -194,29 +172,26 @@ export default function Hero() {
               ))}
             </motion.div>
 
-            {/* Premium CTA Buttons */}
+            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1, duration: 0.9 }}
-              className="flex flex-col sm:flex-row flex-wrap gap-3 pt-2"
+              transition={{ delay: 1.1, duration: 0.8 }}
+              className="pt-4"
             >
-              {/* Primary CTA - Enhanced */}
-              <Link href="/allprojects" className="w-full sm:w-auto">
+              <Link href="/allprojects">
                 <motion.button
-                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileHover={{ scale: 1.03, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group relative w-full sm:w-auto"
+                  className="group relative"
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-red-light via-red-primary to-red-dark rounded-2xl blur-xl opacity-50 group-hover:opacity-80 transition duration-700" />
-                  <div className="relative px-7 py-3.5 bg-gradient-red text-white font-heading font-semibold rounded-2xl overflow-hidden shadow-2xl">
-                    <span className="relative z-10 flex items-center justify-center gap-2 text-sm">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-red-light to-red-dark rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition duration-500" />
+                  <div className="relative px-8 py-4 bg-gradient-to-r from-red-light via-red-primary to-red-dark text-white font-heading font-bold text-base rounded-2xl overflow-hidden shadow-xl">
+                    <span className="relative z-10 flex items-center gap-2.5">
                       View All Projects
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-500" />
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-light to-red-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    {/* Shine Effect */}
-                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-primary to-red-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </motion.button>
               </Link>
@@ -225,28 +200,27 @@ export default function Hero() {
 
           {/* Right Visual - Portfolio Owner Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="relative hidden lg:flex lg:items-center lg:justify-center"
           >
             <div className="relative">
-              {/* Glow Effect */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-gold/30 via-gold-light/20 to-gold/30 rounded-3xl blur-2xl opacity-60" />
+              {/* Subtle Glow */}
+              <div className="absolute -inset-6 bg-gradient-to-br from-gold/20 to-gold/10 rounded-3xl blur-3xl opacity-40" />
               
-              {/* Image Container with Gold Border */}
+              {/* Image Container */}
               <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className="relative w-[440px] h-[440px] xl:w-[480px] xl:h-[480px] p-[1px] rounded-3xl bg-gradient-to-br from-gold via-gold-light to-gold shadow-2xl"
+                whileHover={{ scale: 1.01 }}
+                transition={{ duration: 0.4 }}
+                className="relative w-[420px] h-[420px] xl:w-[460px] xl:h-[460px] p-[2px] rounded-3xl bg-gradient-to-br from-gold via-gold-light to-gold shadow-2xl"
               >
-                {/* Inner container */}
-                <div className="w-full h-full rounded-[calc(1.5rem-1px)] overflow-hidden bg-background/20 backdrop-blur-sm">
+                <div className="w-full h-full rounded-[calc(1.5rem-2px)] overflow-hidden bg-background/30 backdrop-blur-sm">
                   <Image
                     src="/images/profile.jpg.jpg"
                     alt="Viduth Ishara - Data Scientist & AI Engineer"
-                    width={480}
-                    height={480}
+                    width={460}
+                    height={460}
                     className="w-full h-full object-cover"
                     priority
                   />
