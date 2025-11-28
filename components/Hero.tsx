@@ -87,10 +87,10 @@ export default function Hero() {
                 transition={{ delay: 0.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               >
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-heading font-black tracking-tighter leading-[0.9]">
-                  <span className="block bg-gradient-to-br from-foreground via-foreground/95 to-foreground/80 bg-clip-text text-transparent drop-shadow-2xl">
-                    VIDUTH
+                  <span className="bg-gradient-to-br from-foreground via-foreground/95 to-foreground/80 bg-clip-text text-transparent drop-shadow-2xl">
+                    VIDUTH{" "}
                   </span>
-                  <span className="block mt-1 bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent" style={{
+                  <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent" style={{
                     textShadow: '0 0 80px rgba(212,175,55,0.3)'
                   }}>
                     ISHARA
