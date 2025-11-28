@@ -202,7 +202,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row flex-wrap gap-3 pt-2"
             >
               {/* Primary CTA - Enhanced */}
-              <Link href="/projects" className="w-full sm:w-auto">
+              <Link href="/allprojects" className="w-full sm:w-auto">
                 <motion.button
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}

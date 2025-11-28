@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/data/projects";
 
 const containerVariants = {
@@ -45,7 +46,7 @@ export default function FeaturedProjects() {
             Featured Work
           </span>
           <h2 className="text-h1 font-heading font-bold mt-4 mb-6">
-            AI Projects
+            All Projects
           </h2>
           <div className="h-[2px] w-24 bg-gradient-gold" />
         </motion.div>
@@ -67,20 +68,29 @@ export default function FeaturedProjects() {
             >
               {/* Card */}
               <div className={`
-                relative h-full p-8 rounded-2xl
+                relative h-full rounded-2xl overflow-hidden
                 bg-gradient-to-br ${project.gradient}
                 backdrop-blur-xl border-2 ${project.borderColor}
                 transition-all duration-500
                 hover:shadow-gold-glow
               `}>
-                {/* Project Number */}
-                <div className="absolute top-6 right-6 text-6xl font-heading font-bold text-gold/10 group-hover:text-gold/20 transition-colors">
-                  {String(index + 1).padStart(2, '0')}
+                {/* Project Image */}
+                <div className="relative w-full h-64 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+                  {/* Project Number Overlay */}
+                  <div className="absolute top-4 right-4 text-3xl font-heading font-bold text-gold/20 group-hover:text-gold/30 transition-colors">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 space-y-6">
-                  {/* Title */}
+                <div className="relative z-10 p-8 space-y-6">{/* Title */}
                   <div>
                     <h3 className="text-2xl font-heading font-bold text-foreground mb-2 group-hover:text-gold transition-colors">
                       {project.title}
@@ -118,12 +128,6 @@ export default function FeaturedProjects() {
                       </span>
                     ))}
                   </div>
-
-                  {/* View Link */}
-                  <button className="flex items-center gap-2 text-gold font-medium text-sm group/link pt-4">
-                    <span>View Project</span>
-                    <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                  </button>
                 </div>
 
                 {/* Hover Effect Overlay */}
@@ -141,7 +145,7 @@ export default function FeaturedProjects() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <Link href="/projects">
+          <Link href="/allprojects">
             <button className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-gold/10 via-gold/5 to-gold/10 border-2 border-gold/30 hover:border-gold text-gold font-semibold tracking-wide transition-all duration-300 hover:shadow-gold-glow hover:scale-105">
               <span>View All Projects</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

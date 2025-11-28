@@ -5,6 +5,7 @@ export const projects = [
     title: "SpinVision",
     subtitle: "Deep Learning Analysis of Spin Bowling Technique",
     description: "AI-powered system analysing left-arm spin bowling using deep learning pose estimation and biomechanical feature extraction. Published MSc dissertation providing objective, real-time feedback on posture, alignment, and release mechanics.",
+    image: "/images/projects/spinvision.jpg",
     tags: ["Computer Vision", "Pose Estimation", "Deep Neural Networks", "Sports Analytics"],
     metrics: [
       { label: "Custom Dataset Creation", icon: Eye },
@@ -18,6 +19,7 @@ export const projects = [
     title: "Wicket Keeper Coach",
     subtitle: "AI Analysis of Wicket-Keeping Technique",
     description: "Deep learning system evaluating wicket-keeping technique using pose estimation and action classification. Published research paper demonstrating temporal modelling and CNN-based technique scoring.",
+    image: "/images/projects/wicketkeeper.svg",
     tags: ["Pose Estimation", "CNN Classification", "Temporal Modelling"],
     metrics: [
       { label: "Pose Landmarks Extraction", icon: Eye },
@@ -31,6 +33,7 @@ export const projects = [
     title: "Retail Forecasting Platform",
     subtitle: "ML-Powered Demand Forecasting",
     description: "End-to-end ML forecasting platform automating ETL, running predictive models for every SKU/location, and delivering real-time insights. Achieved 35% improvement in forecast accuracy and significant stockout reduction.",
+    image: "/images/projects/retail-forecasting.svg",
     tags: ["Time Series", "ML Engineering", "ETL Automation", "Cloud Integration"],
     metrics: [
       { label: "Automated ETL Pipelines", icon: Cpu },
@@ -44,6 +47,7 @@ export const projects = [
     title: "Claims Management System",
     subtitle: "Aviation Insurance Platform",
     description: "High-throughput claims management application unifying the full lifecycle with secure workflows, API integrations, and audit trails. Reduced processing time by 30% while improving compliance.",
+    image: "/images/projects/claims-management.svg",
     tags: ["System Architecture", "Automation", "Data Engineering", "Secure Workflows"],
     metrics: [
       { label: "Automated Workflows", icon: Cpu },
@@ -57,6 +61,7 @@ export const projects = [
     title: "Master Data Governance",
     subtitle: "Aviation Insurance MDM",
     description: "MDM framework unifying customer and policy data with intelligent deduplication using fuzzy matching. Eliminated 40% of duplicate records and strengthened cross-department data integrity.",
+    image: "/images/projects/mdm-governance.svg",
     tags: ["Data Governance", "Deduplication", "Data Quality", "MDM Architecture"],
     metrics: [
       { label: "Fuzzy Matching Engine", icon: Cpu },
