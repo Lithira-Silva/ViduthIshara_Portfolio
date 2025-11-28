@@ -46,8 +46,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             className="font-heading font-bold text-xl"
           >
-            <span className="text-foreground">VIDUTH</span>
-            <span className="text-gold"> ISHARA</span>
+            <span className="text-gold">PORTFOLIO</span>
           </motion.a>
 
           {/* Desktop Navigation */}
