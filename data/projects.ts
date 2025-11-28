@@ -6,6 +6,10 @@ export const projects = [
     subtitle: "Deep Learning Analysis of Spin Bowling Technique",
     description: "AI-powered system analysing left-arm spin bowling using deep learning pose estimation and biomechanical feature extraction. Published MSc dissertation providing objective, real-time feedback on posture, alignment, and release mechanics.",
     image: "/images/projects/spinvision.jpg",
+    endorsement: {
+      title: "Supervisor Endorsement: SpinVision Project",
+      quote: "Dr. Huang commended the project for its innovation, real-time performance, and solid deep-learning approach. He highlighted my ability to handle advanced machine-learning topics and deliver production-quality systems."
+    },
     tags: ["Computer Vision", "Pose Estimation", "Deep Neural Networks", "Sports Analytics"],
     metrics: [
       { label: "Custom Dataset Creation", icon: Eye },

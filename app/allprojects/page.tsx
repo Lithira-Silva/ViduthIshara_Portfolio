@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowLeft } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowUpRight, ArrowLeft, Plus, Minus } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/data/projects";
+import { useState } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,6 +29,8 @@ const itemVariants = {
 };
 
 export default function AllProjectsPage() {
+  const [expandedProject, setExpandedProject] = useState<number | null>(null);
+
   return (
     <main className="relative min-h-screen bg-background text-foreground">
       {/* Background Elements */}
@@ -78,23 +81,29 @@ export default function AllProjectsPage() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          layout
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -8 }}
+              layout
               className="group relative"
             >
               {/* Card */}
-              <div className={`
-                relative h-full rounded-2xl overflow-hidden
+              <motion.div
+                layout
+                className={`
+                relative rounded-2xl overflow-hidden
                 bg-gradient-to-br ${project.gradient}
                 backdrop-blur-xl border-2 ${project.borderColor}
                 transition-all duration-500
                 hover:shadow-gold-glow
-              `}>
+                ${expandedProject === index ? 'row-span-2' : ''}
+              `}
+                whileHover={{ y: -8 }}
+              >
                 {/* Project Image */}
                 <div className="relative w-full h-64 overflow-hidden">
                   <Image
@@ -150,11 +159,48 @@ export default function AllProjectsPage() {
                       </span>
                     ))}
                   </div>
+
+                  {/* Endorsement Section - Only for SpinVision */}
+                  {project.endorsement && (
+                    <div className="pt-4 mt-4 border-t border-gold/15">
+                      <button
+                        onClick={() => setExpandedProject(expandedProject === index ? null : index)}
+                        className="w-full flex items-center justify-between gap-3 text-left group/endorsement"
+                      >
+                        <span className="text-gold font-bold text-xs uppercase tracking-widest">
+                          {project.endorsement.title}
+                        </span>
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center group-hover/endorsement:bg-gold/20 transition-colors">
+                          {expandedProject === index ? (
+                            <Minus className="w-3.5 h-3.5 text-gold" />
+                          ) : (
+                            <Plus className="w-3.5 h-3.5 text-gold" />
+                          )}
+                        </div>
+                      </button>
+                      
+                      <AnimatePresence>
+                        {expandedProject === index && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <blockquote className="text-foreground/80 italic text-sm leading-relaxed border-l-2 border-gold/50 pl-4 mt-3">
+                              "{project.endorsement.quote}"
+                            </blockquote>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  )}
                 </div>
 
                 {/* Hover Effect Overlay */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/0 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>
