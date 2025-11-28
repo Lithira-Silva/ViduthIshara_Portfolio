@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 
@@ -10,7 +10,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -26,39 +26,60 @@ const itemVariants = {
   },
 };
 
-export default function FeaturedProjects() {
+export default function AllProjectsPage() {
   return (
-    <section className="relative py-140 px-6 overflow-hidden">
+    <main className="relative min-h-screen bg-background text-foreground">
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+      <div className="fixed top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+      <div className="fixed bottom-0 left-0 w-96 h-96 bg-red-primary/5 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Section Header */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32">
+        {/* Back Button */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
+          <Link href="/#projects">
+            <button className="group inline-flex items-center gap-2 text-foreground/60 hover:text-gold transition-colors">
+              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+              <span>Back to Home</span>
+            </button>
+          </Link>
+        </motion.div>
+
+        {/* Page Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-20"
         >
           <span className="text-gold font-medium tracking-wider text-sm uppercase">
-            Featured Work
+            Portfolio
           </span>
-          <h2 className="text-h1 font-heading font-bold mt-4 mb-6">
-            AI Projects
-          </h2>
-          <div className="h-[2px] w-24 bg-gradient-gold" />
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-[1.05] mt-4 mb-6">
+            All Projects
+          </h1>
+          <p className="text-lg text-foreground/70 max-w-2xl">
+            A comprehensive collection of AI-powered systems, machine learning platforms, and data engineering solutions.
+          </p>
+          <div className="flex items-center gap-3 mt-6">
+            <div className="h-[2px] w-20 bg-gold rounded-full" />
+            <div className="h-[2px] w-10 bg-gold/50 rounded-full" />
+            <div className="h-[2px] w-5 bg-gold/30 rounded-full" />
+          </div>
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* All Projects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          animate="visible"
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {projects.slice(0, 3).map((project, index) => (
+          {projects.map((project, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -132,23 +153,7 @@ export default function FeaturedProjects() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* View All Projects Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <Link href="/projects">
-            <button className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-gold/10 via-gold/5 to-gold/10 border-2 border-gold/30 hover:border-gold text-gold font-semibold tracking-wide transition-all duration-300 hover:shadow-gold-glow hover:scale-105">
-              <span>View All Projects</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </Link>
-        </motion.div>
       </div>
-    </section>
+    </main>
   );
 }

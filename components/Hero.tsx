@@ -37,6 +37,7 @@ const jobTitles = [
   "AI Engineer",
   "Computer Vision Specialist"
 ];
+import Link from "next/link";
 
 export default function Hero() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -201,22 +202,24 @@ export default function Hero() {
               className="flex flex-col sm:flex-row flex-wrap gap-3 pt-2"
             >
               {/* Primary CTA - Enhanced */}
-              <motion.button
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="group relative w-full sm:w-auto"
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-red-light via-red-primary to-red-dark rounded-2xl blur-xl opacity-50 group-hover:opacity-80 transition duration-700" />
-                <div className="relative px-7 py-3.5 bg-gradient-red text-white font-heading font-semibold rounded-2xl overflow-hidden shadow-2xl">
-                  <span className="relative z-10 flex items-center justify-center gap-2 text-sm">
-                    View All Projects
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-500" />
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-light to-red-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  {/* Shine Effect */}
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
-                </div>
-              </motion.button>
+              <Link href="/projects" className="w-full sm:w-auto">
+                <motion.button
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative w-full sm:w-auto"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-red-light via-red-primary to-red-dark rounded-2xl blur-xl opacity-50 group-hover:opacity-80 transition duration-700" />
+                  <div className="relative px-7 py-3.5 bg-gradient-red text-white font-heading font-semibold rounded-2xl overflow-hidden shadow-2xl">
+                    <span className="relative z-10 flex items-center justify-center gap-2 text-sm">
+                      View All Projects
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-500" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-light to-red-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Shine Effect */}
+                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
+                  </div>
+                </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
 
