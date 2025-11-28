@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, BookOpen, Send, Phone, User, MessageSquare, Sparkles } from "lucide-react";
+import { Mail, Github, Linkedin, BookOpen, Send, Phone, User, MessageSquare, Sparkles, CheckCircle2, AlertCircle } from "lucide-react";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 const contactLinks = [
   {
@@ -51,20 +52,53 @@ export default function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Open email client with pre-filled data
-    const mailtoLink = `mailto:viduthishara@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-    window.location.href = mailtoLink;
-    
-    setIsSubmitting(false);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    try {
+      // Replace these with your EmailJS credentials
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'viduthishara@gmail.com',
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      setSubmitStatus('success');
+      setStatusMessage('Message sent successfully! I\'ll get back to you soon.');
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+        setStatusMessage('');
+      }, 5000);
+      
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitStatus('error');
+      setStatusMessage('Failed to send message. Please try again or email me directly.');
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+        setStatusMessage('');
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -264,6 +298,26 @@ export default function Contact() {
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-red-primary to-red-dark opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
+
+                  {/* Status Message */}
+                  {submitStatus !== 'idle' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`flex items-center gap-2 p-4 rounded-xl ${
+                        submitStatus === 'success' 
+                          ? 'bg-green-500/10 border border-green-500/30 text-green-400' 
+                          : 'bg-red-500/10 border border-red-500/30 text-red-400'
+                      }`}
+                    >
+                      {submitStatus === 'success' ? (
+                        <CheckCircle2 className="w-5 h-5" />
+                      ) : (
+                        <AlertCircle className="w-5 h-5" />
+                      )}
+                      <span className="text-sm font-medium">{statusMessage}</span>
+                    </motion.div>
+                  )}
                 </div>
               </div>
             </form>
