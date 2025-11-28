@@ -235,26 +235,20 @@ export default function Hero() {
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="relative w-[380px] h-[380px] xl:w-[420px] xl:h-[420px] p-2 rounded-3xl bg-gradient-to-br from-gold via-gold-light to-gold shadow-2xl"
+                className="relative w-[440px] h-[440px] xl:w-[480px] xl:h-[480px] p-[1px] rounded-3xl bg-gradient-to-br from-gold via-gold-light to-gold shadow-2xl"
               >
                 {/* Inner container */}
-                <div className="w-full h-full rounded-[1.25rem] overflow-hidden bg-background/20 backdrop-blur-sm">
+                <div className="w-full h-full rounded-[calc(1.5rem-1px)] overflow-hidden bg-background/20 backdrop-blur-sm">
                   <Image
                     src="/images/profile.jpg.jpg"
                     alt="Viduth Ishara - Data Scientist & AI Engineer"
-                    width={420}
-                    height={420}
+                    width={480}
+                    height={480}
                     className="w-full h-full object-cover"
                     priority
                   />
                 </div>
               </motion.div>
-
-              {/* Decorative Corner Accents */}
-              <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-gold rounded-tl-2xl" />
-              <div className="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-gold rounded-tr-2xl" />
-              <div className="absolute -bottom-3 -left-3 w-8 h-8 border-b-2 border-l-2 border-gold rounded-bl-2xl" />
-              <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-gold rounded-br-2xl" />
             </div>
           </motion.div>
         </div>
