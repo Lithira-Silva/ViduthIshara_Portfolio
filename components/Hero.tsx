@@ -77,24 +77,6 @@ export default function Hero() {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-6 md:space-y-7"
           >
-            {/* Premium Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-flex"
-            >
-              <div className="group relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-gold via-gold-light to-gold rounded-full blur opacity-30 group-hover:opacity-50 transition duration-500" />
-                <div className="relative flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-gold/15 via-gold/10 to-gold/5 border border-gold/30 backdrop-blur-sm">
-                  <Sparkles className="w-3.5 h-3.5 text-gold animate-pulse" />
-                  <span className="text-gold font-heading font-bold tracking-widest text-xs uppercase">
-                    Portfolio 2025
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-            
             {/* Name - Ultra-Premium Typography */}
             <div className="space-y-4">
               <motion.div
@@ -140,9 +122,7 @@ export default function Hero() {
             >
               <div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-gold via-gold/50 to-transparent" />
               <p className="text-base sm:text-lg md:text-xl font-body text-foreground/90 leading-relaxed font-normal max-w-2xl">
-                I build applied AI systems — <span className="text-gold font-bold">computer vision</span>, 
-                <span className="text-gold font-bold"> deep learning</span> and 
-                <span className="text-gold font-bold"> intelligent automation</span>.
+                Architecting intelligent systems that see, learn, and automate — transforming raw data into <span className="text-gold font-bold">production-ready AI solutions</span> through <span className="text-gold font-bold">computer vision</span>, <span className="text-gold font-bold">deep learning</span>, and <span className="text-gold font-bold">advanced automation</span>.
               </p>
             </motion.div>
 
