@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, BookOpen, Send, Phone, User, MessageSquare } from "lucide-react";
+import { Mail, Github, Linkedin, BookOpen, Send, Phone, User, MessageSquare, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 const contactLinks = [
@@ -75,28 +75,34 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative py-140 px-6 overflow-hidden">
+    <section className="relative py-32 px-6 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/5 to-transparent" />
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/10 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-5xl mx-auto">
+      <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-20 text-center"
+          className="mb-20"
         >
-          <span className="text-gold font-medium tracking-wider text-sm uppercase">
-            Get In Touch
-          </span>
-          <h2 className="text-h1 font-heading font-bold mt-4 mb-6">
+          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold/10 via-gold/8 to-gold/10 border border-gold/30 shadow-[0_4px_16px_rgba(212,175,55,0.15)] mb-6 backdrop-blur-sm">
+            <Sparkles className="w-4 h-4 text-gold animate-pulse" />
+            <span className="text-gold font-bold tracking-widest text-xs uppercase bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
+              Get In Touch
+            </span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-[1.05] mb-6">
             Let's Build Something Amazing
           </h2>
-          <div className="h-[2px] w-24 bg-gradient-gold mx-auto mb-6" />
-          <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-[2px] w-20 bg-gold rounded-full" />
+            <div className="h-[2px] w-10 bg-gold/50 rounded-full" />
+            <div className="h-[2px] w-5 bg-gold/30 rounded-full" />
+          </div>
+          <p className="text-foreground/70 text-lg max-w-2xl">
             Open to AI/ML opportunities in the UK. Let's discuss how I can contribute to your team.
           </p>
         </motion.div>
@@ -107,18 +113,11 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid lg:grid-cols-2 gap-12 mb-12"
+          className="grid lg:grid-cols-2 gap-10 mb-16"
         >
           {/* Left: Contact Links */}
           <div className="space-y-6">
-            <div>
-              <h3 className="text-h3 font-heading font-bold mb-6">Get in Touch</h3>
-              <p className="text-foreground/70 mb-8">
-                Feel free to reach out through any of these channels or use the contact form.
-              </p>
-            </div>
-
-            <div className="grid gap-4">
+            <div className="space-y-4">
               {contactLinks.map((link, index) => (
                 <motion.a
                   key={index}
@@ -129,25 +128,26 @@ export default function Contact() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  whileHover={{ x: 4 }}
-                  className="group"
+                  whileHover={{ x: 4, scale: 1.02 }}
+                  className="group block"
                 >
                   <div className={`
-                    p-4 rounded-xl
+                    p-5 rounded-2xl
                     bg-gradient-to-br ${link.gradient}
-                    border border-gold/20 hover:border-gold/60
-                    hover:shadow-gold-glow
+                    border border-gold/20 hover:border-gold/50
+                    hover:shadow-[0_8px_32px_rgba(212,175,55,0.2)]
                     transition-all duration-500
+                    backdrop-blur-sm
                   `}>
                     <div className="flex items-center gap-4">
-                      <div className="p-2 rounded-lg bg-gold/10 border border-gold/30 group-hover:bg-gold/20 transition-colors">
-                        <link.icon className="w-5 h-5 text-gold" />
+                      <div className="flex-shrink-0 p-3 rounded-xl bg-gold/10 border border-gold/30 group-hover:bg-gold/20 group-hover:scale-110 transition-all duration-300 shadow-[0_2px_12px_rgba(212,175,55,0.2)]">
+                        <link.icon className="w-5 h-5 text-gold" strokeWidth={2} />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-xs text-gold/60 uppercase tracking-wider mb-1">
+                        <div className="text-xs text-gold/70 uppercase tracking-widest font-bold mb-1">
                           {link.label}
                         </div>
-                        <div className="text-sm text-foreground/80 truncate group-hover:text-foreground transition-colors">
+                        <div className="text-sm text-foreground/90 truncate group-hover:text-foreground font-medium transition-colors">
                           {link.value}
                         </div>
                       </div>
@@ -165,21 +165,23 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-gold/5 to-gold/[0.02] border border-gold/20">
-                <h3 className="text-h3 font-heading font-bold mb-6 flex items-center gap-2">
-                  <Send className="w-6 h-6 text-gold" />
+            <form onSubmit={handleSubmit}>
+              <div className="p-8 rounded-3xl bg-gradient-to-br from-black/40 to-black/20 border border-gold/30 backdrop-blur-xl shadow-2xl">
+                <h3 className="text-2xl font-heading font-bold mb-6 flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-gold/10 border border-gold/30">
+                    <Send className="w-5 h-5 text-gold" />
+                  </div>
                   Send a Message
                 </h3>
 
                 <div className="space-y-5">
                   {/* Name Field */}
                   <div className="group">
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground/70 mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-foreground/80 mb-2">
                       Your Name
                     </label>
                     <div className="relative">
-                      <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gold/40 group-focus-within:text-gold transition-colors" />
+                      <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gold/50 group-focus-within:text-gold transition-colors" />
                       <input
                         type="text"
                         id="name"
@@ -187,7 +189,7 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full pl-12 pr-4 py-3 rounded-lg bg-background/50 border border-gold/20 text-foreground placeholder:text-foreground/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
+                        className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-black/40 border border-gold/20 text-foreground placeholder:text-foreground/40 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 transition-all backdrop-blur-sm font-medium"
                         placeholder="John Doe"
                       />
                     </div>
@@ -195,11 +197,11 @@ export default function Contact() {
 
                   {/* Email Field */}
                   <div className="group">
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground/70 mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold text-foreground/80 mb-2">
                       Email Address
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gold/40 group-focus-within:text-gold transition-colors" />
+                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gold/50 group-focus-within:text-gold transition-colors" />
                       <input
                         type="email"
                         id="email"
@@ -207,7 +209,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full pl-12 pr-4 py-3 rounded-lg bg-background/50 border border-gold/20 text-foreground placeholder:text-foreground/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
+                        className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-black/40 border border-gold/20 text-foreground placeholder:text-foreground/40 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 transition-all backdrop-blur-sm font-medium"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -215,11 +217,11 @@ export default function Contact() {
 
                   {/* Subject Field */}
                   <div className="group">
-                    <label htmlFor="subject" className="block text-sm font-medium text-foreground/70 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-semibold text-foreground/80 mb-2">
                       Subject
                     </label>
                     <div className="relative">
-                      <MessageSquare className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gold/40 group-focus-within:text-gold transition-colors" />
+                      <MessageSquare className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gold/50 group-focus-within:text-gold transition-colors" />
                       <input
                         type="text"
                         id="subject"
@@ -227,7 +229,7 @@ export default function Contact() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full pl-12 pr-4 py-3 rounded-lg bg-background/50 border border-gold/20 text-foreground placeholder:text-foreground/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
+                        className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-black/40 border border-gold/20 text-foreground placeholder:text-foreground/40 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 transition-all backdrop-blur-sm font-medium"
                         placeholder="Project Inquiry"
                       />
                     </div>
@@ -235,7 +237,7 @@ export default function Contact() {
 
                   {/* Message Field */}
                   <div className="group">
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground/70 mb-2">
+                    <label htmlFor="message" className="block text-sm font-semibold text-foreground/80 mb-2">
                       Message
                     </label>
                     <textarea
@@ -245,7 +247,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 rounded-lg bg-background/50 border border-gold/20 text-foreground placeholder:text-foreground/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all resize-none"
+                      className="w-full px-4 py-3.5 rounded-xl bg-black/40 border border-gold/20 text-foreground placeholder:text-foreground/40 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 transition-all resize-none backdrop-blur-sm font-medium"
                       placeholder="Tell me about your project or inquiry..."
                     />
                   </div>
@@ -254,35 +256,18 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group w-full relative px-8 py-4 bg-gradient-red text-white font-heading font-bold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-red-glow hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="group w-full relative px-8 py-4 bg-gradient-to-r from-red-light via-red-primary to-red-dark text-white font-heading font-bold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_8px_32px_rgba(198,40,40,0.4)] hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {isSubmitting ? "Sending..." : "Send Message"}
                       <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-light to-red-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-primary to-red-dark opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
                 </div>
               </div>
             </form>
           </motion.div>
-        </motion.div>
-
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-center"
-        >
-          <button className="group relative px-12 py-5 bg-gradient-red text-white font-heading font-bold text-lg rounded-lg overflow-hidden transition-all duration-300 hover:shadow-red-glow hover:scale-[1.02]">
-            <span className="relative z-10 flex items-center gap-3">
-              Hire Me for AI/ML Projects
-              <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-red-light to-red-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-          </button>
         </motion.div>
       </div>
     </section>
