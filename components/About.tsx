@@ -53,9 +53,9 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-5 text-base sm:text-lg text-foreground/75 leading-relaxed"
+              className="space-y-6 text-base sm:text-lg text-foreground/75 leading-relaxed text-justify"
             >
-              <p className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-gradient-to-b before:from-gold/60 before:via-gold/30 before:to-transparent before:rounded-full">
+              <p>
                 I'm a <span className="text-gold font-semibold">Data Scientist and AI Engineer</span> specialising 
                 in applied computer vision, deep learning, and intelligent automation.
               </p>
@@ -66,11 +66,11 @@ export default function About() {
                 production-ready systems for real operational use.
               </p>
               <p>
-                I focus on solving real problems using machine learning and robust engineering — from 
+                I focus on solving real problems using machine learning and robust engineering from 
                 <span className="text-gold font-semibold"> cricket technique analysis</span> to 
                 <span className="text-gold font-semibold"> enterprise-grade claims and MDM automation</span>.
               </p>
-              <p className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-gradient-to-b before:from-red-primary/60 before:via-red-primary/30 before:to-transparent before:rounded-full">
+              <p>
                 Currently based in the UK and open to <span className="text-gold font-semibold">Data Scientist</span>, 
                 <span className="text-gold font-semibold"> AI Engineer</span>, and 
                 <span className="text-gold font-semibold"> Computer Vision Engineer</span> roles.
