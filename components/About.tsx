@@ -32,18 +32,19 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 mb-6">
-                <Sparkles className="w-4 h-4 text-gold" />
-                <span className="text-gold font-medium tracking-wider text-sm uppercase">
-                  About Me
+              <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold/10 via-gold/8 to-gold/10 border border-gold/30 shadow-[0_4px_16px_rgba(212,175,55,0.15)] mb-6 backdrop-blur-sm">
+                <Sparkles className="w-4 h-4 text-gold animate-pulse" />
+                <span className="text-gold font-bold tracking-widest text-xs uppercase bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
+                  Who I Am
                 </span>
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-[1.1] mb-6">
-                Building Intelligence<br />Into Reality
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-[1.05] mb-6">
+                About Me
               </h2>
-              <div className="flex items-center gap-3">
-                <div className="h-[3px] w-16 bg-gradient-gold rounded-full" />
-                <div className="h-[3px] w-8 bg-gradient-gold/50 rounded-full" />
+              <div className="flex items-center gap-3 mb-2">
+                <div className="h-[2px] w-20 bg-gold rounded-full" />
+                <div className="h-[2px] w-10 bg-gold/50 rounded-full" />
+                <div className="h-[2px] w-5 bg-gold/30 rounded-full" />
               </div>
             </motion.div>
 
@@ -53,13 +54,13 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6 text-base sm:text-lg text-foreground/75 leading-relaxed text-justify"
+              className="space-y-5 text-base sm:text-lg text-foreground/80 leading-[1.8]"
             >
-              <p>
+              <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-gold first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8]">
                 I'm a <span className="text-gold font-semibold">Data Scientist and AI Engineer</span> specialising 
                 in applied computer vision, deep learning, and intelligent automation.
               </p>
-              <p>
+              <p className="pl-4 border-l-2 border-gold/30">
                 My work spans <span className="text-gold font-semibold">human-pose analysis</span>, 
                 <span className="text-gold font-semibold"> sports biomechanics</span>, 
                 <span className="text-gold font-semibold"> LLM engineering</span>, and building 
@@ -70,7 +71,7 @@ export default function About() {
                 <span className="text-gold font-semibold"> cricket technique analysis</span> to 
                 <span className="text-gold font-semibold"> enterprise-grade claims and MDM automation</span>.
               </p>
-              <p>
+              <p className="pl-4 border-l-2 border-gold/30">
                 Currently based in the UK and open to <span className="text-gold font-semibold">Data Scientist</span>, 
                 <span className="text-gold font-semibold"> AI Engineer</span>, and 
                 <span className="text-gold font-semibold"> Computer Vision Engineer</span> roles.
@@ -118,13 +119,13 @@ export default function About() {
           >
             {/* Main Card */}
             <div className="relative group">
-              {/* Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-br from-gold/20 via-gold/10 to-red-primary/10 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition duration-700" />
+              {/* Subtle Glow Effect */}
+              <div className="absolute -inset-0.5 bg-gold/20 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition duration-700" />
               
-              <div className="relative p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-white/[0.07] via-white/[0.04] to-white/[0.02] border border-gold/30 backdrop-blur-xl shadow-2xl">
+              <div className="relative p-8 lg:p-10 rounded-3xl bg-white/[0.03] border border-gold/25 hover:border-gold/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-500">
                 {/* Header */}
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 rounded-xl bg-gold/15 border border-gold/30">
+                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gold/20">
+                  <div className="p-3 rounded-xl bg-gold/10 border border-gold/25">
                     <Award className="w-6 h-6 text-gold" />
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-foreground">Professional Summary</h3>
