@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Download, ArrowRight, Sparkles, Brain, Trophy, GraduationCap, Code2 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const stats = [
   { 
@@ -30,7 +31,23 @@ const stats = [
   },
 ];
 
+const jobTitles = [
+  "Data Scientist",
+  "AI Engineer",
+  "Computer Vision Specialist"
+];
+
 export default function Hero() {
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitleIndex((prev) => (prev + 1) % jobTitles.length);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       {/* Premium Background System */}
@@ -78,7 +95,7 @@ export default function Hero() {
             className="space-y-6 md:space-y-7"
           >
             {/* Name - Ultra-Premium Typography */}
-            <div className="space-y-4">
+            <div className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -101,14 +118,25 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="space-y-2.5"
               >
-                <div className="flex items-center gap-3">
-                  <div className="h-[2px] w-10 bg-gradient-gold rounded-full shadow-gold-glow" />
-                  <div className="h-[2px] w-5 bg-gradient-red rounded-full shadow-red-glow" />
-                </div>
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-heading font-bold text-foreground tracking-tight leading-tight">
-                  Data Scientist <span className="text-gold mx-1">•</span> AI Engineer <span className="text-gold mx-1">•</span> Computer Vision Specialist
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-heading font-bold text-foreground/80 tracking-tight leading-tight">
+                  <div className="inline-block overflow-hidden relative min-w-[300px] sm:min-w-[400px] md:min-w-[500px] h-[1.3em]">
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={currentTitleIndex}
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -50, opacity: 0 }}
+                        transition={{ 
+                          duration: 0.6,
+                          ease: [0.22, 1, 0.36, 1]
+                        }}
+                        className="absolute left-0 top-0 whitespace-nowrap bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent"
+                      >
+                        {jobTitles[currentTitleIndex]}
+                      </motion.span>
+                    </AnimatePresence>
+                  </div>
                 </h2>
               </motion.div>
             </div>
