@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, ArrowRight, Sparkles, Brain, Trophy, GraduationCap, Code2 } from "lucide-react";
+import { FileDown, ArrowRight, Brain, Trophy, GraduationCap, Code2 } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const stats = [
@@ -218,7 +218,9 @@ export default function Hero() {
               </motion.button>
 
               {/* Secondary CTA - Enhanced */}
-              <motion.button
+              <motion.a
+                href="/resume.pdf"
+                download
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="group relative w-full sm:w-auto"
@@ -226,14 +228,14 @@ export default function Hero() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-gold via-gold-light to-gold rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition duration-700" />
                 <div className="relative px-7 py-3.5 bg-background/60 border border-gold/30 text-gold font-heading font-semibold rounded-2xl backdrop-blur-xl overflow-hidden transition-all duration-500 shadow-xl hover:border-gold/50">
                   <span className="relative z-10 flex items-center justify-center gap-2 text-sm">
-                    Download CV
-                    <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-500" />
+                    Download Resume
+                    <FileDown className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-500" />
                   </span>
                   <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   {/* Shine Effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-gold/15 to-transparent skew-x-12" />
                 </div>
-              </motion.button>
+              </motion.a>
             </motion.div>
           </motion.div>
 

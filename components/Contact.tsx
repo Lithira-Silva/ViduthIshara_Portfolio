@@ -22,8 +22,8 @@ const contactLinks = [
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/RMVISHARA",
-    href: "https://github.com/RMVISHARA",
+    value: "github.com/Lithira-Silva",
+    href: "https://github.com/Lithira-Silva",
     gradient: "from-white/5 to-white/[0.02]",
   },
   {
