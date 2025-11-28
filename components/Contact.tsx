@@ -129,7 +129,7 @@ export default function Contact() {
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-[1.05] mb-6">
-            Let's Build Something Amazing
+            Let&apos;s Build Something Amazing
           </h2>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-[2px] w-20 bg-gold rounded-full" />
@@ -137,7 +137,7 @@ export default function Contact() {
             <div className="h-[2px] w-5 bg-gold/30 rounded-full" />
           </div>
           <p className="text-foreground/70 text-lg max-w-2xl">
-            Open to AI/ML opportunities in the UK. Let's discuss how I can contribute to your team.
+            Open to AI/ML opportunities in the UK. Let&apos;s discuss how I can contribute to your team.
           </p>
         </motion.div>
 

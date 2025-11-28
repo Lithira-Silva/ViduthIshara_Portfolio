@@ -192,7 +192,7 @@ function AllProjectsContent() {
                             className="overflow-hidden"
                           >
                             <blockquote className="text-foreground/80 italic text-sm leading-relaxed border-l-2 border-gold/50 pl-4 mt-3">
-                              "{project.endorsement.quote}"
+                              &ldquo;{project.endorsement.quote}&rdquo;
                             </blockquote>
                           </motion.div>
                         )}

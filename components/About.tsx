@@ -57,7 +57,7 @@ export default function About() {
               className="space-y-5 text-base sm:text-lg text-foreground/80 leading-[1.8]"
             >
               <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-gold first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8]">
-                I'm a <span className="text-gold font-semibold">Data Scientist and AI Engineer</span> specialising 
+                I&apos;m a <span className="text-gold font-semibold">Data Scientist and AI Engineer</span> specialising 
                 in applied computer vision, deep learning, and intelligent automation.
               </p>
               <p className="pl-4 border-l-2 border-gold/30">

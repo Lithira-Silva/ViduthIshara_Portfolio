@@ -56,7 +56,7 @@ export default function AcademicRecognition() {
               <div className="relative space-y-8 px-4 md:px-8">
                 {/* Quote */}
                 <blockquote className="text-base sm:text-lg text-foreground/80 leading-[1.8] italic text-center">
-                  "Viduth developed an ambitious deep learning system for real-time pose estimation and spin bowling analysis... exceptionally capable, self-motivated, and technically strong."
+                  &ldquo;Viduth developed an ambitious deep learning system for real-time pose estimation and spin bowling analysis... exceptionally capable, self-motivated, and technically strong.&rdquo;
                 </blockquote>
                 
                 {/* Attribution */}
