@@ -23,7 +23,7 @@ export const projects = [
     title: "Wicket Keeper Coach",
     subtitle: "AI Analysis of Wicket-Keeping Technique",
     description: "Deep learning system evaluating wicket-keeping technique using pose estimation and action classification. Published research paper demonstrating temporal modelling and CNN-based technique scoring.",
-    image: "/images/projects/wicketkeeper.svg",
+    image: "/images/projects/wicketkeeper.jpg",
     tags: ["Pose Estimation", "CNN Classification", "Temporal Modelling"],
     metrics: [
       { label: "Pose Landmarks Extraction", icon: Eye },
@@ -37,7 +37,7 @@ export const projects = [
     title: "Retail Forecasting Platform",
     subtitle: "ML-Powered Demand Forecasting",
     description: "End-to-end ML forecasting platform automating ETL, running predictive models for every SKU/location, and delivering real-time insights. Achieved 35% improvement in forecast accuracy and significant stockout reduction.",
-    image: "/images/projects/retail-forecasting.svg",
+    image: "/images/projects/retail-forecasting.jpg",
     tags: ["Time Series", "ML Engineering", "ETL Automation", "Cloud Integration"],
     metrics: [
       { label: "Automated ETL Pipelines", icon: Cpu },
@@ -51,7 +51,7 @@ export const projects = [
     title: "Claims Management System",
     subtitle: "Aviation Insurance Platform",
     description: "High-throughput claims management application unifying the full lifecycle with secure workflows, API integrations, and audit trails. Reduced processing time by 30% while improving compliance.",
-    image: "/images/projects/claims-management.svg",
+    image: "/images/projects/claims-management.jpg",
     tags: ["System Architecture", "Automation", "Data Engineering", "Secure Workflows"],
     metrics: [
       { label: "Automated Workflows", icon: Cpu },
@@ -65,7 +65,7 @@ export const projects = [
     title: "Master Data Governance",
     subtitle: "Aviation Insurance MDM",
     description: "MDM framework unifying customer and policy data with intelligent deduplication using fuzzy matching. Eliminated 40% of duplicate records and strengthened cross-department data integrity.",
-    image: "/images/projects/mdm-governance.svg",
+    image: "/images/projects/mdm-governance.jpg",
     tags: ["Data Governance", "Deduplication", "Data Quality", "MDM Architecture"],
     metrics: [
       { label: "Fuzzy Matching Engine", icon: Cpu },
