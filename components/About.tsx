@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, ArrowRight, Award, BookOpen, GraduationCap, Briefcase } from "lucide-react";
+import { Sparkles, ArrowRight, Award, BookOpen, GraduationCap, Briefcase, Target } from "lucide-react";
 
 export default function About() {
   return (
@@ -138,12 +138,13 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300"
                   >
-                    <div className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
-                      <GraduationCap className="w-4 h-4 text-gold" />
+                    <div className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300">
+                      <span className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
+                        <GraduationCap className="w-4 h-4 text-gold" />
+                      </span>
+                      <span className="text-sm text-foreground/75 leading-relaxed">MSc in Data Science & Analytics (University of Westminster)</span>
                     </div>
-                    <span className="text-sm text-foreground/75 leading-relaxed">MSc in Data Science & Analytics (University of Westminster)</span>
                   </motion.li>
                   
                   <motion.li
@@ -151,12 +152,13 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.5 }}
-                    className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300"
                   >
-                    <div className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
-                      <BookOpen className="w-4 h-4 text-gold" />
+                    <div className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300">
+                      <span className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
+                        <BookOpen className="w-4 h-4 text-gold" />
+                      </span>
+                      <span className="text-sm text-foreground/75 leading-relaxed">Published research in pose estimation–based sports analytics</span>
                     </div>
-                    <span className="text-sm text-foreground/75 leading-relaxed">Published research in pose estimation–based sports analytics</span>
                   </motion.li>
                   
                   <motion.li
@@ -164,12 +166,13 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.6 }}
-                    className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300"
                   >
-                    <div className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
-                      <Sparkles className="w-4 h-4 text-gold" />
+                    <div className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300">
+                      <span className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
+                        <Sparkles className="w-4 h-4 text-gold" />
+                      </span>
+                      <span className="text-sm text-foreground/75 leading-relaxed">Built full ML pipelines with custom datasets, CNN models, and real-time inference</span>
                     </div>
-                    <span className="text-sm text-foreground/75 leading-relaxed">Built full ML pipelines with custom datasets, CNN models, and real-time inference</span>
                   </motion.li>
                   
                   <motion.li
@@ -177,12 +180,13 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.7 }}
-                    className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300"
                   >
-                    <div className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
-                      <Briefcase className="w-4 h-4 text-gold" />
+                    <div className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300">
+                      <span className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
+                        <Target className="w-4 h-4 text-gold" />
+                      </span>
+                      <span className="text-sm text-foreground/75 leading-relaxed">Passionate about ML interpretability, fairness in AI, and building ethical ML systems</span>
                     </div>
-                    <span className="text-sm text-foreground/75 leading-relaxed">Experience developing claims management and MDM systems for enterprise clients</span>
                   </motion.li>
                 </ul>
               </div>
