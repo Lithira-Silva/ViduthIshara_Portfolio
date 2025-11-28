@@ -106,7 +106,7 @@ export default function Skills() {
                 className="group relative"
               >
                 {/* Card */}
-                <div className="relative h-full p-8 rounded-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-white/10 backdrop-blur-sm hover:border-gold/50 transition-all duration-500 hover:shadow-[0_8px_32px_rgba(212,175,55,0.15)]">
+                <div className="relative h-full p-8 rounded-2xl bg-gradient-to-br from-black/80 to-black/50 border border-white/10 backdrop-blur-sm hover:border-gold/50 transition-all duration-500 hover:shadow-[0_8px_32px_rgba(212,175,55,0.15)]">
                   {/* Category Icon */}
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-gold via-gold-light to-gold mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-[0_4px_20px_rgba(212,175,55,0.3)]">
                     <CategoryIcon className="w-8 h-8 text-black" strokeWidth={2.5} />
