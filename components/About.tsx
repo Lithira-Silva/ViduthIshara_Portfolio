@@ -1,107 +1,206 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ArrowRight, Award, BookOpen, GraduationCap, Briefcase } from "lucide-react";
 
 export default function About() {
   return (
-    <section className="relative py-140 px-6 overflow-hidden">
-      {/* Background */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-red-primary/5 rounded-full blur-3xl" />
+    <section className="relative py-20 md:py-28 px-6 overflow-hidden">
+      {/* Enhanced Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-primary/8 rounded-full blur-[120px]" />
+        <div className="absolute right-0 top-1/4 w-[400px] h-[400px] bg-gold/8 rounded-full blur-[120px]" />
+      </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.02)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,black,transparent)] opacity-40" />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid lg:grid-cols-2 gap-16 items-center"
+          className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-start"
         >
           {/* Left Content */}
-          <div className="space-y-6">
-            <div>
-              <span className="text-gold font-medium tracking-wider text-sm uppercase">
-                About Me
-              </span>
-              <h2 className="text-h1 font-heading font-bold mt-4 mb-6">
+          <div className="space-y-8">
+            {/* Section Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 mb-6">
+                <Sparkles className="w-4 h-4 text-gold" />
+                <span className="text-gold font-medium tracking-wider text-sm uppercase">
+                  About Me
+                </span>
+              </div>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-[1.1] mb-6">
                 Building Intelligence<br />Into Reality
               </h2>
-              <div className="h-[2px] w-24 bg-gradient-gold" />
-            </div>
+              <div className="flex items-center gap-3">
+                <div className="h-[3px] w-16 bg-gradient-gold rounded-full" />
+                <div className="h-[3px] w-8 bg-gradient-gold/50 rounded-full" />
+              </div>
+            </motion.div>
 
-            <div className="space-y-4 text-foreground/70 leading-relaxed">
-              <p>
-                I'm a <span className="text-gold font-medium">Data Scientist and AI Engineer</span> specialising 
+            {/* Body Text with Premium Styling */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-5 text-base sm:text-lg text-foreground/75 leading-relaxed"
+            >
+              <p className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-gradient-to-b before:from-gold/60 before:via-gold/30 before:to-transparent before:rounded-full">
+                I'm a <span className="text-gold font-semibold">Data Scientist and AI Engineer</span> specialising 
                 in applied computer vision, deep learning, and intelligent automation.
               </p>
               <p>
-                My work spans <span className="text-gold font-medium">human-pose analysis</span>, 
-                <span className="text-gold font-medium"> sports biomechanics</span>, 
-                <span className="text-gold font-medium"> LLM engineering</span>, and building 
+                My work spans <span className="text-gold font-semibold">human-pose analysis</span>, 
+                <span className="text-gold font-semibold"> sports biomechanics</span>, 
+                <span className="text-gold font-semibold"> LLM engineering</span>, and building 
                 production-ready systems for real operational use.
               </p>
               <p>
                 I focus on solving real problems using machine learning and robust engineering — from 
-                <span className="text-gold font-medium"> cricket technique analysis</span> to 
-                <span className="text-gold font-medium"> enterprise-grade claims and MDM automation</span>.
+                <span className="text-gold font-semibold"> cricket technique analysis</span> to 
+                <span className="text-gold font-semibold"> enterprise-grade claims and MDM automation</span>.
               </p>
-              <p>
-                Currently based in the UK and open to <span className="text-gold font-medium">Data Scientist</span>, 
-                <span className="text-gold font-medium"> AI Engineer</span>, and 
-                <span className="text-gold font-medium"> Computer Vision Engineer</span> roles.
+              <p className="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-gradient-to-b before:from-red-primary/60 before:via-red-primary/30 before:to-transparent before:rounded-full">
+                Currently based in the UK and open to <span className="text-gold font-semibold">Data Scientist</span>, 
+                <span className="text-gold font-semibold"> AI Engineer</span>, and 
+                <span className="text-gold font-semibold"> Computer Vision Engineer</span> roles.
               </p>
-            </div>
-          </div>
+            </motion.div>
 
-          {/* Right - Vertical Divider & Stats */}
-          <div className="relative">
-            {/* Vertical Gold Line */}
-            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-gold/0 via-gold to-gold/0 hidden lg:block" />
-            
+            {/* Quick Stats Row */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:pl-16 space-y-8"
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="grid grid-cols-2 gap-4 pt-4"
             >
-              {/* Highlight Box */}
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/30">
-                <Sparkles className="w-8 h-8 text-gold mb-4" />
-                <h3 className="text-xl font-heading font-bold mb-3">Professional Summary</h3>
-                <ul className="space-y-3 text-foreground/70">
-                  <li className="flex items-start gap-3">
-                    <span className="text-gold mt-1">→</span>
-                    <span>MSc in Data Science & Analytics (University of Westminster)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-gold mt-1">→</span>
-                    <span>Published research in pose estimation–based sports analytics</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-gold mt-1">→</span>
-                    <span>Built full ML pipelines with custom datasets, CNN models, and real-time inference</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-gold mt-1">→</span>
-                    <span>Experience developing claims management and MDM systems for enterprise clients</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-6 rounded-xl bg-white/[0.02] border border-white/10">
-                  <div className="text-3xl font-heading font-bold text-gold mb-2">5+</div>
-                  <div className="text-sm text-foreground/60">AI Projects</div>
+              <motion.div
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="group relative p-6 rounded-2xl bg-gradient-to-br from-gold/10 via-gold/5 to-transparent border border-gold/20 hover:border-gold/40 transition-all duration-500"
+              >
+                <div className="absolute -inset-1 bg-gold/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
+                <div className="relative">
+                  <div className="text-4xl font-heading font-black text-transparent bg-gradient-to-br from-gold via-gold-light to-gold bg-clip-text mb-2">5+</div>
+                  <div className="text-sm font-medium text-foreground/70">AI Projects</div>
                 </div>
-                <div className="p-6 rounded-xl bg-white/[0.02] border border-white/10">
-                  <div className="text-3xl font-heading font-bold text-gold mb-2">2</div>
-                  <div className="text-sm text-foreground/60">Publications</div>
+              </motion.div>
+              <motion.div
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="group relative p-6 rounded-2xl bg-gradient-to-br from-red-primary/10 via-red-primary/5 to-transparent border border-red-primary/20 hover:border-red-primary/40 transition-all duration-500"
+              >
+                <div className="absolute -inset-1 bg-red-primary/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
+                <div className="relative">
+                  <div className="text-4xl font-heading font-black text-transparent bg-gradient-to-br from-red-light via-red-primary to-red-dark bg-clip-text mb-2">2</div>
+                  <div className="text-sm font-medium text-foreground/70">Publications</div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
+
+          {/* Right - Professional Summary Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="relative lg:sticky lg:top-24"
+          >
+            {/* Main Card */}
+            <div className="relative group">
+              {/* Glow Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-br from-gold/20 via-gold/10 to-red-primary/10 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition duration-700" />
+              
+              <div className="relative p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-white/[0.07] via-white/[0.04] to-white/[0.02] border border-gold/30 backdrop-blur-xl shadow-2xl">
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 rounded-xl bg-gold/15 border border-gold/30">
+                    <Award className="w-6 h-6 text-gold" />
+                  </div>
+                  <h3 className="text-2xl font-heading font-bold text-foreground">Professional Summary</h3>
+                </div>
+
+                {/* List Items with Icons */}
+                <ul className="space-y-4 mb-8">
+                  <motion.li
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300"
+                  >
+                    <div className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
+                      <GraduationCap className="w-4 h-4 text-gold" />
+                    </div>
+                    <span className="text-sm text-foreground/75 leading-relaxed">MSc in Data Science & Analytics (University of Westminster)</span>
+                  </motion.li>
+                  
+                  <motion.li
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300"
+                  >
+                    <div className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
+                      <BookOpen className="w-4 h-4 text-gold" />
+                    </div>
+                    <span className="text-sm text-foreground/75 leading-relaxed">Published research in pose estimation–based sports analytics</span>
+                  </motion.li>
+                  
+                  <motion.li
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300"
+                  >
+                    <div className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
+                      <Sparkles className="w-4 h-4 text-gold" />
+                    </div>
+                    <span className="text-sm text-foreground/75 leading-relaxed">Built full ML pipelines with custom datasets, CNN models, and real-time inference</span>
+                  </motion.li>
+                  
+                  <motion.li
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                    className="group/item flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-gold/30 hover:bg-white/[0.04] transition-all duration-300"
+                  >
+                    <div className="shrink-0 p-2 rounded-lg bg-gold/10 border border-gold/20 group-hover/item:bg-gold/20 transition-colors">
+                      <Briefcase className="w-4 h-4 text-gold" />
+                    </div>
+                    <span className="text-sm text-foreground/75 leading-relaxed">Experience developing claims management and MDM systems for enterprise clients</span>
+                  </motion.li>
+                </ul>
+
+                {/* CTA */}
+                <motion.a
+                  href="#contact"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group/cta relative w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-gold/20 via-gold/15 to-gold/20 text-gold font-heading font-semibold rounded-xl border border-gold/30 hover:border-gold/50 transition-all duration-300 overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    Let's Connect
+                    <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform duration-300" />
+                  </span>
+                  <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300" />
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

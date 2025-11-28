@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FileDown, ArrowRight, Brain, Trophy, GraduationCap, Code2 } from "lucide-react";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const stats = [
   { 
@@ -219,121 +220,41 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Visual - Enhanced Neural Network */}
+          {/* Right Visual - Portfolio Owner Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative hidden lg:block"
+            className="relative hidden lg:flex lg:items-center lg:justify-center"
           >
-            <div className="relative aspect-square max-w-[420px] xl:max-w-[480px] mx-auto">
-              {/* Neural Network Visualization */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                {/* Rotating Ring System */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-                  className="absolute w-full h-full"
-                >
-                  {/* Minimalist Rings */}
-                  <div className="absolute inset-0 rounded-full border border-gold/15" />
-                  <div className="absolute inset-12 rounded-full border border-gold/20" />
-                  <div className="absolute inset-24 rounded-full border border-gold/25" />
-                  
-                  {/* Orbital Nodes */}
-                  {[...Array(12)].map((_, i) => {
-                    const angle = (i * 30) * (Math.PI / 180);
-                    const radius = 190;
-                    return (
-                      <motion.div
-                        key={i}
-                        className="absolute"
-                        style={{
-                          top: '50%',
-                          left: '50%',
-                          transform: `translate(-50%, -50%) rotate(${i * 30}deg) translateY(-${radius}px)`,
-                        }}
-                        animate={{
-                          scale: [1, 1.6, 1],
-                          opacity: [0.4, 1, 0.4],
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Infinity,
-                          delay: i * 0.25,
-                          ease: "easeInOut"
-                        }}
-                      >
-                        <div className="w-2.5 h-2.5 bg-gold/90 rounded-full shadow-[0_0_15px_rgba(212,175,55,0.6)]" />
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
+            <div className="relative">
+              {/* Glow Effect */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-gold/30 via-gold-light/20 to-gold/30 rounded-3xl blur-2xl opacity-60" />
+              
+              {/* Image Container with Gold Border */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="relative w-[380px] h-[380px] xl:w-[420px] xl:h-[420px] p-2 rounded-3xl bg-gradient-to-br from-gold via-gold-light to-gold shadow-2xl"
+              >
+                {/* Inner container */}
+                <div className="w-full h-full rounded-[1.25rem] overflow-hidden bg-background/20 backdrop-blur-sm">
+                  <Image
+                    src="/images/profile.jpg.jpg"
+                    alt="Viduth Ishara - Data Scientist & AI Engineer"
+                    width={420}
+                    height={420}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div>
+              </motion.div>
 
-                {/* Counter-Rotating Inner System */}
-                <motion.div
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-36"
-                >
-                  {[...Array(6)].map((_, i) => {
-                    const radius = 75;
-                    return (
-                      <motion.div
-                        key={i}
-                        className="absolute"
-                        style={{
-                          top: '50%',
-                          left: '50%',
-                          transform: `translate(-50%, -50%) rotate(${i * 60}deg) translateY(-${radius}px)`,
-                        }}
-                        animate={{
-                          scale: [1, 1.4, 1],
-                        }}
-                        transition={{
-                          duration: 2.5,
-                          repeat: Infinity,
-                          delay: i * 0.3,
-                        }}
-                      >
-                        <div className="w-2 h-2 bg-red-primary/80 rounded-full shadow-[0_0_12px_rgba(198,40,40,0.6)]" />
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
-
-                {/* Subtle Center Glow */}
-                <motion.div
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.15, 0.3, 0.15],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute w-48 h-48 bg-gold/20 rounded-full blur-3xl"
-                />
-
-                {/* Premium Center Core */}
-                <motion.div
-                  animate={{
-                    boxShadow: [
-                      "0 0 30px rgba(212, 175, 55, 0.3), 0 0 60px rgba(212, 175, 55, 0.15)",
-                      "0 0 50px rgba(212, 175, 55, 0.5), 0 0 100px rgba(212, 175, 55, 0.25)",
-                      "0 0 30px rgba(212, 175, 55, 0.3), 0 0 60px rgba(212, 175, 55, 0.15)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                  }}
-                  className="relative z-10 w-28 h-28 xl:w-32 xl:h-32 rounded-full bg-gradient-to-br from-gold/90 via-gold-light/80 to-gold-dark/90 flex items-center justify-center border-2 border-background/30 shadow-2xl backdrop-blur-sm"
-                >
-                  <Brain className="w-12 h-12 xl:w-14 xl:h-14 text-background/90 drop-shadow-lg" />
-                </motion.div>
-              </div>
+              {/* Decorative Corner Accents */}
+              <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-gold rounded-tl-2xl" />
+              <div className="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-gold rounded-tr-2xl" />
+              <div className="absolute -bottom-3 -left-3 w-8 h-8 border-b-2 border-l-2 border-gold rounded-bl-2xl" />
+              <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-gold rounded-br-2xl" />
             </div>
           </motion.div>
         </div>

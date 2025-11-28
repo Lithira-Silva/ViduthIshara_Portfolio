@@ -6,8 +6,8 @@ import { Menu, X, Linkedin, Github, FileDown } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "Projects", href: "#projects" },
   { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];

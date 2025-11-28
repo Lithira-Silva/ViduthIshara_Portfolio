@@ -17,12 +17,12 @@ export default function Home() {
         <Hero />
       </div>
 
-      <div id="projects">
-        <FeaturedProjects />
-      </div>
-
       <div id="about">
         <About />
+      </div>
+
+      <div id="projects">
+        <FeaturedProjects />
       </div>
 
       <AcademicRecognition />
