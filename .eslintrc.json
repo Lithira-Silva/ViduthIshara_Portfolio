@@ -1,0 +1,9 @@
+{/** @type {import('next').NextConfig} */
+
+
+
+}  "extends": "next/core-web-vitals"const nextConfig = {
+  reactStrictMode: true,
+};
+
+module.exports = nextConfig;
