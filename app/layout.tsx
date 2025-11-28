@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Viduth Ishara | AI Engineer & Data Scientist",
+  title: "Viduth Ishara Portfolio",
   description: "Data Scientist & AI Engineer specializing in Computer Vision, Deep Learning, Sports Analytics & Enterprise Automation. Building real-world AI systems.",
   keywords: ["AI Engineer", "Data Scientist", "Computer Vision", "Deep Learning", "Machine Learning", "Pose Estimation", "Sports Analytics"],
   authors: [{ name: "Viduth Ishara" }],

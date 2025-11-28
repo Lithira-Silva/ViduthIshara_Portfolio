@@ -185,20 +185,6 @@ export default function About() {
                     <span className="text-sm text-foreground/75 leading-relaxed">Experience developing claims management and MDM systems for enterprise clients</span>
                   </motion.li>
                 </ul>
-
-                {/* CTA */}
-                <motion.a
-                  href="#contact"
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group/cta relative w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-gold/20 via-gold/15 to-gold/20 text-gold font-heading font-semibold rounded-xl border border-gold/30 hover:border-gold/50 transition-all duration-300 overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Let's Connect
-                    <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform duration-300" />
-                  </span>
-                  <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300" />
-                </motion.a>
               </div>
             </div>
           </motion.div>

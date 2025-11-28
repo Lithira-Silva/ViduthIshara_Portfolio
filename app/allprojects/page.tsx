@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/data/projects";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -30,6 +31,8 @@ const itemVariants = {
 
 export default function AllProjectsPage() {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
+  const searchParams = useSearchParams();
+  const fromSection = searchParams.get('from') || 'hero';
 
   return (
     <main className="relative min-h-screen bg-background text-foreground">
@@ -45,7 +48,7 @@ export default function AllProjectsPage() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <Link href="/#projects">
+          <Link href={fromSection === 'projects' ? '/#projects' : '/#hero'}>
             <button className="group inline-flex items-center gap-2 text-foreground/60 hover:text-gold transition-colors">
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               <span>Back to Home</span>

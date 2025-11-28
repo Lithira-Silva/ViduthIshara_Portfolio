@@ -29,7 +29,7 @@ const itemVariants = {
 
 export default function FeaturedProjects() {
   return (
-    <section className="relative py-140 px-6 overflow-hidden">
+    <section id="projects" className="relative py-140 px-6 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
 
@@ -145,7 +145,7 @@ export default function FeaturedProjects() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <Link href="/allprojects">
+          <Link href="/allprojects?from=projects">
             <button className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-gold/10 via-gold/5 to-gold/10 border-2 border-gold/30 hover:border-gold text-gold font-semibold tracking-wide transition-all duration-300 hover:shadow-gold-glow hover:scale-105">
               <span>View All Projects</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

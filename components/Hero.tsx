@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FileDown, ArrowRight, Brain, Trophy, GraduationCap, Code2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const stats = [
   { 
@@ -37,7 +38,6 @@ const jobTitles = [
   "AI Engineer",
   "Computer Vision Specialist"
 ];
-import Link from "next/link";
 
 export default function Hero() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -51,7 +51,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 sm:px-8 lg:px-12 py-20 md:py-24">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 sm:px-8 lg:px-12 py-20 md:py-24">
       {/* Clean Background */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div 
@@ -179,7 +179,7 @@ export default function Hero() {
               transition={{ delay: 1.1, duration: 0.8 }}
               className="pt-4"
             >
-              <Link href="/allprojects">
+              <Link href="/allprojects?from=hero">
                 <motion.button
                   whileHover={{ scale: 1.03, y: -2 }}
                   whileTap={{ scale: 0.98 }}
@@ -191,7 +191,8 @@ export default function Hero() {
                       View All Projects
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-primary to-red-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Left to Right Shine Animation */}
+                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent" />
                   </div>
                 </motion.button>
               </Link>
