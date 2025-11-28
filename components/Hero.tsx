@@ -5,9 +5,9 @@ import { Download, ArrowRight, Sparkles, Brain, Trophy, GraduationCap } from "lu
 
 const stats = [
   { icon: GraduationCap, text: "MSc Data Science & Analytics" },
-  { icon: Trophy, text: "Published AI Sports Analytics Research" },
-  { icon: Brain, text: "Computer Vision Specialist" },
-  { icon: Sparkles, text: "Enterprise ML Engineering" },
+  { icon: Trophy, text: "AI-powered sports analytics projects (published research)" },
+  { icon: Brain, text: "Computer vision + LLM engineering + end-to-end ML pipelines" },
+  { icon: Sparkles, text: "Python • PyTorch • TensorFlow • OpenCV • Azure" },
 ];
 
 export default function Hero() {
@@ -62,10 +62,9 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg text-foreground/70 leading-relaxed max-w-xl"
           >
-            I build real-world AI systems — <span className="text-gold font-medium">Computer Vision</span>, 
-            <span className="text-gold font-medium"> Deep Learning</span>, 
-            <span className="text-gold font-medium"> Sports Analytics</span> & 
-            <span className="text-gold font-medium"> Enterprise Automation</span>.
+            I build applied AI systems — <span className="text-gold font-medium">computer vision</span>, 
+            <span className="text-gold font-medium"> deep learning</span> and 
+            <span className="text-gold font-medium"> intelligent automation</span>.
           </motion.p>
 
           {/* Stats Grid */}

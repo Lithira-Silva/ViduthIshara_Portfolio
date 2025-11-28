@@ -31,23 +31,24 @@ export default function About() {
 
             <div className="space-y-4 text-foreground/70 leading-relaxed">
               <p>
-                I'm a <span className="text-gold font-medium">Data Scientist and AI Engineer</span> specializing 
-                in Computer Vision, Deep Learning, and enterprise-scale ML systems.
+                I'm a <span className="text-gold font-medium">Data Scientist and AI Engineer</span> specialising 
+                in applied computer vision, deep learning, and intelligent automation.
               </p>
               <p>
-                My expertise spans <span className="text-gold font-medium">pose estimation</span>, 
-                <span className="text-gold font-medium"> action recognition</span>, and 
-                <span className="text-gold font-medium"> temporal modelling</span> — applying cutting-edge 
-                deep learning techniques to solve real-world challenges in sports analytics and beyond.
+                My work spans <span className="text-gold font-medium">human-pose analysis</span>, 
+                <span className="text-gold font-medium"> sports biomechanics</span>, 
+                <span className="text-gold font-medium"> LLM engineering</span>, and building 
+                production-ready systems for real operational use.
               </p>
               <p>
-                With experience building <span className="text-gold font-medium">production ML pipelines</span> and 
-                <span className="text-gold font-medium"> enterprise automation systems</span>, I bridge the gap 
-                between research and deployment, delivering AI solutions that create measurable impact.
+                I focus on solving real problems using machine learning and robust engineering — from 
+                <span className="text-gold font-medium"> cricket technique analysis</span> to 
+                <span className="text-gold font-medium"> enterprise-grade claims and MDM automation</span>.
               </p>
               <p>
-                Currently seeking opportunities with <span className="text-gold font-medium">UK-based AI teams</span> to 
-                contribute to innovative projects at the intersection of computer vision and deep learning.
+                Currently based in the UK and open to <span className="text-gold font-medium">Data Scientist</span>, 
+                <span className="text-gold font-medium"> AI Engineer</span>, and 
+                <span className="text-gold font-medium"> Computer Vision Engineer</span> roles.
               </p>
             </div>
           </div>
@@ -67,23 +68,23 @@ export default function About() {
               {/* Highlight Box */}
               <div className="p-8 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/30">
                 <Sparkles className="w-8 h-8 text-gold mb-4" />
-                <h3 className="text-xl font-heading font-bold mb-3">Core Expertise</h3>
+                <h3 className="text-xl font-heading font-bold mb-3">Professional Summary</h3>
                 <ul className="space-y-3 text-foreground/70">
                   <li className="flex items-start gap-3">
                     <span className="text-gold mt-1">→</span>
-                    <span>Computer Vision & Pose Estimation Systems</span>
+                    <span>MSc in Data Science & Analytics (University of Westminster)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold mt-1">→</span>
-                    <span>Deep Learning Model Architecture & Training</span>
+                    <span>Published research in pose estimation–based sports analytics</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold mt-1">→</span>
-                    <span>Sports Analytics & Biomechanical Analysis</span>
+                    <span>Built full ML pipelines with custom datasets, CNN models, and real-time inference</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold mt-1">→</span>
-                    <span>Enterprise ML Pipelines & Automation</span>
+                    <span>Experience developing claims management and MDM systems for enterprise clients</span>
                   </li>
                 </ul>
               </div>

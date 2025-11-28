@@ -24,8 +24,8 @@ export default function Testimonial() {
 
           {/* Quote */}
           <blockquote className="text-2xl md:text-3xl font-heading leading-relaxed text-foreground mb-8 italic">
-            "Viduth demonstrates exceptional depth in deep learning and computer vision, 
-            with strong research and engineering skills."
+            "Viduth developed an ambitious deep learning system for real-time pose estimation and spin bowling 
+            analysis... exceptionally capable, self-motivated, and technically strong."
           </blockquote>
 
           {/* Author */}
@@ -36,7 +36,7 @@ export default function Testimonial() {
                 Dr. Yongchao Huang
               </div>
               <div className="text-foreground/60 text-sm">
-                Visiting Lecturer, University of Westminster
+                Visiting Lecturer in Computer Science, University of Westminster
               </div>
             </div>
           </div>
