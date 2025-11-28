@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Quote, Sparkles } from "lucide-react";
+import { Award, Quote, Download } from "lucide-react";
 
 export default function AcademicRecognition() {
   return (
@@ -53,16 +53,28 @@ export default function AcademicRecognition() {
               {/* Decorative Corner Elements */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-gold/10 to-transparent rounded-bl-full" />
               
-              <div className="relative space-y-8">
+              <div className="relative space-y-8 px-4 md:px-8">
                 {/* Quote */}
-                <blockquote className="text-base sm:text-lg text-foreground/80 leading-[1.8] italic pl-4 border-l-2 border-gold/30">
+                <blockquote className="text-base sm:text-lg text-foreground/80 leading-[1.8] italic text-center">
                   "Viduth developed an ambitious deep learning system for real-time pose estimation and spin bowling analysis... exceptionally capable, self-motivated, and technically strong."
                 </blockquote>
                 
                 {/* Attribution */}
-                <div className="pt-6">
-                  <p className="font-bold text-gold text-base mb-2">Dr. Yongchao Huang</p>
-                  <p className="text-sm text-foreground/60 leading-relaxed">Visiting Lecturer in Computer Science, University of Westminster</p>
+                <div className="pt-6 space-y-4">
+                  <div>
+                    <p className="font-bold text-gold text-base mb-2">Dr. Yongchao Huang</p>
+                    <p className="text-sm text-foreground/60 leading-relaxed">Visiting Lecturer in Computer Science, University of Westminster</p>
+                  </div>
+                  
+                  {/* Download Button */}
+                  <a 
+                    href="/pdf/Reference letter.pdf" 
+                    download
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold/10 via-gold/5 to-gold/10 border border-gold/30 hover:border-gold text-gold font-medium text-sm transition-all duration-300 hover:shadow-[0_4px_16px_rgba(212,175,55,0.2)] hover:scale-105"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>Download Reference Letter</span>
+                  </a>
                 </div>
               </div>
             </div>
