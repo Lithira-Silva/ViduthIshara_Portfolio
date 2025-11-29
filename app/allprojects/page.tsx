@@ -7,6 +7,7 @@ import Image from "next/image";
 import { projects } from "@/data/projects";
 import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import ProjectModal from "@/components/ProjectModal";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -31,6 +32,7 @@ const itemVariants = {
 
 function AllProjectsContent() {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const searchParams = useSearchParams();
   const fromSection = searchParams.get('from') || 'hero';
 
@@ -141,7 +143,7 @@ function AllProjectsContent() {
 
                   {/* Metrics */}
                   <div className="space-y-2 pt-3 border-t border-white/10">
-                    {project.metrics.slice(0, 2).map((metric, idx) => (
+                    {project.metrics.map((metric, idx) => (
                       <div key={idx} className="flex items-center gap-2">
                         <metric.icon className="w-3.5 h-3.5 text-gold" />
                         <span className="text-xs text-foreground/60 uppercase tracking-wide">
@@ -199,6 +201,19 @@ function AllProjectsContent() {
                       </AnimatePresence>
                     </div>
                   )}
+
+                  {/* View More Button - Always at the bottom */}
+                  {project.extendedInfo && (
+                    <div className="pt-3 mt-auto">
+                      <button
+                        onClick={() => setSelectedProject(index)}
+                        className="w-full px-4 py-2 bg-gradient-to-r from-gold/10 to-gold/5 border border-gold/30 hover:border-gold text-gold font-bold text-xs rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+                      >
+                        <span>View More Details</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {/* Hover Effect Overlay */}
@@ -208,6 +223,17 @@ function AllProjectsContent() {
           ))}
         </motion.div>
       </div>
+
+      {/* Project Modal */}
+      {selectedProject !== null && (
+        <ProjectModal
+          isOpen={selectedProject !== null}
+          onClose={() => setSelectedProject(null)}
+          title={projects[selectedProject].title}
+          subtitle={projects[selectedProject].subtitle}
+          extendedInfo={projects[selectedProject].extendedInfo}
+        />
+      )}
     </main>
   );
 }
@@ -215,7 +241,9 @@ function AllProjectsContent() {
 export default function AllProjectsPage() {
   return (
     <Suspense fallback={<div className="min-h-screen bg-background" />}>
-      <AllProjectsContent />
+      <div suppressHydrationWarning>
+        <AllProjectsContent />
+      </div>
     </Suspense>
   );
 }
