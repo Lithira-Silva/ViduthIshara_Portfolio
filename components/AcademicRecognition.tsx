@@ -47,8 +47,8 @@ export default function AcademicRecognition() {
             {/* Main Card */}
             <div className="relative p-10 md:p-14 rounded-3xl bg-white/[0.03] backdrop-blur-xl border-2 border-gold/25 shadow-2xl overflow-hidden">
               {/* Top Quote Icon */}
-              <Quote className="absolute top-8 left-8 w-12 h-12 text-gold/20" />
-              <Quote className="absolute bottom-8 right-8 w-12 h-12 text-gold/20 rotate-180" />
+              <Quote className="absolute top-8 left-8 w-12 h-12 text-gold/20 rotate-180" />
+              <Quote className="absolute bottom-8 right-8 w-12 h-12 text-gold/20" />
               
               {/* Decorative Corner Elements */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-gold/10 to-transparent rounded-bl-full" />
