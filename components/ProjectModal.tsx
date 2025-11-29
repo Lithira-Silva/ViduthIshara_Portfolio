@@ -15,6 +15,15 @@ interface ProjectModalProps {
 export default function ProjectModal({ isOpen, onClose, title, subtitle, extendedInfo }: ProjectModalProps) {
   if (!extendedInfo) return null;
 
+  // Lock body scroll when modal is open
+  if (typeof window !== 'undefined') {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }
+
   return (
     <AnimatePresence>
       {isOpen && (
