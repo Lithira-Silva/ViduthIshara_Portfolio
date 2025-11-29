@@ -127,6 +127,24 @@ export default function ProjectModal({ isOpen, onClose, title, subtitle, extende
                   </div>
                 )}
 
+                {/* Results */}
+                {extendedInfo.results && extendedInfo.results.length > 0 && (
+                  <div>
+                    <h3 className="text-xl font-heading font-bold text-gold mb-4 flex items-center gap-2">
+                      <div className="h-1 w-8 bg-gold rounded-full" />
+                      Results
+                    </h3>
+                    <ul className="space-y-3">
+                      {extendedInfo.results.map((result, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-foreground/80">
+                          <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                          <span className="leading-relaxed">{result}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {/* Impact */}
                 {extendedInfo.impact && extendedInfo.impact.length > 0 && (
                   <div>
