@@ -52,6 +52,7 @@ export default function ProjectModal({ isOpen, onClose, title, subtitle, extende
                   <button
                     onClick={onClose}
                     className="flex-shrink-0 p-2 rounded-full bg-white/5 border border-white/10 hover:border-gold/50 hover:bg-gold/10 transition-all duration-300 group"
+                    aria-label="Close modal"
                   >
                     <X className="w-5 h-5 text-foreground/60 group-hover:text-gold transition-colors" />
                   </button>
