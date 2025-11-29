@@ -14,8 +14,6 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ isOpen, onClose, title, subtitle, extendedInfo }: ProjectModalProps) {
-  if (!extendedInfo) return null;
-
   // Lock body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -29,6 +27,8 @@ export default function ProjectModal({ isOpen, onClose, title, subtitle, extende
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  if (!extendedInfo) return null;
 
   return (
     <AnimatePresence>
