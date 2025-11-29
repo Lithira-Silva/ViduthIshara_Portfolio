@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CheckCircle2 } from "lucide-react";
 import { ProjectExtendedInfo } from "@/data/projects";
+import { useEffect } from "react";
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -16,13 +17,18 @@ export default function ProjectModal({ isOpen, onClose, title, subtitle, extende
   if (!extendedInfo) return null;
 
   // Lock body scroll when modal is open
-  if (typeof window !== 'undefined') {
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-  }
+
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
     <AnimatePresence>
