@@ -21,13 +21,13 @@ const stats = [
   },
   { 
     icon: Brain, 
-    text: "Computer vision + LLM engineering + end-to-end ML pipelines",
+    text: "Computer vision | Deep learning | Neural networks | End-to-end ML pipelines",
     label: "Technical Expertise",
     color: "gold"
   },
   { 
     icon: Code2, 
-    text: "Python • PyTorch • TensorFlow • OpenCV • Azure",
+    text: "Python | Flask | SQL | Power Platform | Azure",
     label: "Tech Stack",
     color: "red"
   },
@@ -148,10 +148,10 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 + index * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ y: -6, scale: 1.02 }}
-                  className="group relative"
+                  className="group relative h-full"
                 >
-                  <div className="relative p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-white/[0.06] via-white/[0.03] to-transparent border border-white/10 group-hover:border-gold/40 transition-all duration-500 backdrop-blur-md shadow-lg">
-                    <div className="flex items-start gap-2.5">
+                  <div className="relative h-full p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-white/[0.06] via-white/[0.03] to-transparent border border-white/10 group-hover:border-gold/40 transition-all duration-500 backdrop-blur-md shadow-lg flex">
+                    <div className="flex items-start gap-2.5 w-full">
                       {/* Icon Container */}
                       <div className={`shrink-0 p-2.5 rounded-xl ${stat.color === 'gold' ? 'bg-gold/10 border-gold/25' : 'bg-red-primary/10 border-red-primary/25'} border group-hover:scale-105 transition-all duration-300`}>
                         <stat.icon className={`w-5 h-5 ${stat.color === 'gold' ? 'text-gold' : 'text-red-primary'}`} strokeWidth={2.5} />
