@@ -6,12 +6,14 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  fallback: ["system-ui", "arial"],
 });
 
 const spaceGrotesk = Space_Grotesk({ 
   subsets: ["latin"],
   variable: "--font-space-grotesk",
   display: "swap",
+  fallback: ["system-ui", "arial"],
 });
 
 export const metadata: Metadata = {
