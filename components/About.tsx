@@ -57,24 +57,13 @@ export default function About() {
               className="space-y-5 text-base sm:text-lg text-foreground/80 leading-[1.8]"
             >
               <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-gold first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8]">
-                I&apos;m a <span className="text-gold font-semibold">Data Scientist and AI Engineer</span> specialising 
-                in applied computer vision, deep learning, and intelligent automation.
+                Viduth Ishara is a dynamic data specialist with a hybrid background in software engineering and data science, delivering intelligent solutions at the intersection of AI, automation, and enterprise analytics.
               </p>
               <p className="pl-4 border-l-2 border-gold/30">
-                My work spans <span className="text-gold font-semibold">human-pose analysis</span>, 
-                <span className="text-gold font-semibold"> sports biomechanics</span>, 
-                <span className="text-gold font-semibold"> LLM engineering</span>, and building 
-                production-ready systems for real operational use.
+                With a deep technical foundation and a passion for operational efficiency, Viduth&apos;s vision is to simplify complex workflows and unlock business value through data-driven systems. His work spans scalable Power Platform applications, real-time API integrations, and intelligent reporting models bridging the gap between raw data and actionable insight.
               </p>
               <p>
-                I focus on solving real problems using machine learning and robust engineering from 
-                <span className="text-gold font-semibold"> cricket technique analysis</span> to 
-                <span className="text-gold font-semibold"> enterprise-grade claims and MDM automation</span>.
-              </p>
-              <p className="pl-4 border-l-2 border-gold/30">
-                Currently based in the UK and open to <span className="text-gold font-semibold">Data Scientist</span>, 
-                <span className="text-gold font-semibold"> AI Engineer</span>, and 
-                <span className="text-gold font-semibold"> Computer Vision Engineer</span> roles.
+                SpinVision, Viduth&apos;s AI-powered pose analysis project, exemplifies his commitment to applied AI innovation beyond the enterprise world. By blending computer vision with sports analytics, he&apos;s pushing the boundaries of what intelligent systems can do across industries from business ops to biomechanics.
               </p>
             </motion.div>
 

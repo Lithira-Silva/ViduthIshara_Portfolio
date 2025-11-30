@@ -218,7 +218,7 @@ export default function Hero() {
               >
                 <div className="w-full h-full rounded-[calc(1.5rem-2px)] overflow-hidden bg-background/30 backdrop-blur-sm">
                   <Image
-                    src="/images/profile.jpg.jpg"
+                    src="/images/profile.JPG"
                     alt="Viduth Ishara - Data Scientist & AI Engineer"
                     width={460}
                     height={460}

@@ -76,7 +76,7 @@ export const projects = [
     borderColor: "border-gold/30 hover:border-gold",
   },
   {
-    title: "Wicket Keeper Coach",
+    title: "The Wicket Keep Coach",
     subtitle: "AI Analysis of Wicket-Keeping Technique",
     description: "Deep learning system evaluating wicket-keeping technique using pose estimation and action classification. Published research paper demonstrating temporal modelling and CNN-based technique scoring.",
     image: "/images/projects/wicketkeeper.jpg",

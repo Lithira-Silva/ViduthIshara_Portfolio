@@ -135,7 +135,7 @@ export default function Navbar() {
 
               {/* Resume Download */}
               <motion.a
-                href="/resume.pdf"
+                href="/pdf/Viduth ishara CV.pdf"
                 download
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -231,7 +231,7 @@ export default function Navbar() {
 
               {/* Resume Download Button */}
               <motion.a
-                href="/resume.pdf"
+                href="/pdf/Viduth ishara CV.pdf"
                 download
                 whileTap={{ scale: 0.95 }}
                 className="group relative py-3 px-5 bg-gradient-to-r from-gold/20 via-gold-light/15 to-gold/20 backdrop-blur-xl rounded-xl border border-gold/30 hover:border-gold/50 transition-all duration-300"
