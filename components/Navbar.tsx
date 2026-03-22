@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X, Linkedin, Github, FileDown } from "lucide-react";
+import { Menu, X, Linkedin, Github, FileDown, ExternalLink } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -107,6 +107,22 @@ export default function Navbar() {
 
             {/* Social Links & Resume */}
             <div className="flex items-center gap-2">
+              {/* Business Website */}
+              <motion.a
+                href="https://capital-v-solutions.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative px-4 py-2.5 bg-gradient-to-r from-gold/22 via-gold-light/16 to-gold/22 backdrop-blur-2xl rounded-xl border border-gold/35 hover:border-gold/60 transition-all duration-300 shadow-[0_4px_16px_rgba(212,175,55,0.16)] hover:shadow-[0_4px_24px_rgba(212,175,55,0.28)]"
+              >
+                <span className="relative z-10 flex items-center gap-2 text-sm font-semibold text-gold">
+                  Business Site
+                  <ExternalLink className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gold/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.a>
+
               {/* LinkedIn */}
               <motion.a
                 href="https://www.linkedin.com/in/viduth-ishara/"
@@ -228,6 +244,21 @@ export default function Navbar() {
                   </div>
                 </motion.a>
               </div>
+
+              {/* Business Website Button */}
+              <motion.a
+                href="https://capital-v-solutions.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileTap={{ scale: 0.95 }}
+                className="group relative py-3 px-5 bg-gradient-to-r from-gold/22 via-gold-light/16 to-gold/22 backdrop-blur-xl rounded-xl border border-gold/35 hover:border-gold/60 transition-all duration-300"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2 text-sm font-semibold text-gold">
+                  Visit Business Site
+                  <ExternalLink className="w-4 h-4" />
+                </span>
+                <div className="absolute inset-0 bg-gold/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.a>
 
               {/* Resume Download Button */}
               <motion.a

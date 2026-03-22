@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { FileDown, ArrowRight, Brain, Trophy, GraduationCap, Code2 } from "lucide-react";
+import { ArrowRight, Brain, Trophy, GraduationCap, Code2, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -172,12 +172,12 @@ export default function Hero() {
               ))}
             </motion.div>
 
-            {/* CTA Button */}
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.8 }}
-              className="pt-4"
+              className="pt-4 flex flex-col sm:flex-row gap-4"
             >
               <Link href="/allprojects?from=hero">
                 <motion.button
@@ -196,6 +196,24 @@ export default function Hero() {
                   </div>
                 </motion.button>
               </Link>
+
+              <motion.a
+                href="https://capital-v-solutions.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative"
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-gold/40 to-gold-light/30 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition duration-500" />
+                <div className="relative px-8 py-4 bg-gradient-to-r from-gold/20 via-gold-light/15 to-gold/20 border border-gold/40 text-gold font-heading font-bold text-base rounded-2xl overflow-hidden shadow-xl backdrop-blur-xl">
+                  <span className="relative z-10 flex items-center gap-2.5">
+                    Visit Capital-V Solutions
+                    <ExternalLink className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                  </span>
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                </div>
+              </motion.a>
             </motion.div>
           </motion.div>
 

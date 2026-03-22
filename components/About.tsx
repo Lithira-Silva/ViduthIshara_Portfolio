@@ -57,13 +57,19 @@ export default function About() {
               className="space-y-5 text-base sm:text-lg text-foreground/80 leading-[1.8]"
             >
               <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-gold first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8]">
-                Viduth Ishara is a dynamic data specialist with a hybrid background in software engineering and data science, delivering intelligent solutions at the intersection of AI, automation, and enterprise analytics.
+                I&apos;m a Data Scientist and AI Engineer specialising in data intelligence and automation, building production-grade ML systems that deliver measurable business outcomes.
               </p>
               <p className="pl-4 border-l-2 border-gold/30">
-                With a deep technical foundation and a passion for operational efficiency, Viduth&apos;s vision is to simplify complex workflows and unlock business value through data-driven systems. His work spans scalable Power Platform applications, real-time API integrations, and intelligent reporting models bridging the gap between raw data and actionable insight.
+                With a background spanning software engineering, data science, and cloud-based automation, I&apos;ve delivered end-to-end AI solutions for global clients across retail, aviation insurance, and enterprise operations.
               </p>
               <p>
-                SpinVision, Viduth&apos;s AI-powered pose analysis project, exemplifies his commitment to applied AI innovation beyond the enterprise world. By blending computer vision with sports analytics, he&apos;s pushing the boundaries of what intelligent systems can do across industries from business ops to biomechanics.
+                I&apos;m the founder of Capital-V Solutions, an AI and operational intelligence consultancy helping operations-driven businesses replace manual processes with intelligent, data-driven systems.
+              </p>
+              <p>
+                Outside enterprise AI, I&apos;m building a computer vision platform for cricket technique analysis using pose estimation and deep learning to provide objective biomechanical feedback for players and coaches. The foundation is two dissertation projects completed at the University of Westminster.
+              </p>
+              <p>
+                If you&apos;re looking for a Data Scientist or AI Engineer who delivers production systems, not just models, or if your business needs AI automation that actually works, let&apos;s connect.
               </p>
             </motion.div>
 
